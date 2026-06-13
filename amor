@@ -1,0 +1,187 @@
+
+### 1. Cambios de Estilo y Concepto
+
+*   **Paleta de Colores:** 
+    *   En lugar de los tonos pasteles y rosas (propios de la repostería), utilizaremos un **Rojo Terracota/Ladrillo** (asociado al color del chorizo y las brasas), tonos **Crema/Beige claro** para el fondo (aporta un toque artesanal y limpio), y **Gris Oscuro/Carbón** para los textos e íconos principales.
+*   **Categorías (Iconos Circulares):**
+    *   *Genovesas®* $\rightarrow$ **Tradicionales** (Chorizo Antioqueño, Santandereano, etc.)
+    *   *Tortas* $\rightarrow$ **Gourmet** (Chorizos con queso maduro, finas hierbas o picantes)
+    *   *Repostería* $\rightarrow$ **Combos Parrilleros** (Packs listos para asados)
+    *   *Zendales* $\rightarrow$ **Acompañantes** (Arepas, chimichurri, salsas artesanales)
+*   **Estética de las Fotos:**
+    *   La clave del diseño de *Don Jacobo* es el fondo minimalista y de un solo color detrás del producto. Para los chorizos, en lugar de un fondo morado o rosa, se puede usar un fondo de tono **gris piedra suave, terracota mate o madera rústica clara**, mostrando el producto cocinado, listo para consumir, presentado de forma muy estética y limpia.
+
+---
+
+### 2. Estructura de Diseño (Prototipo Móvil)
+
+A continuación, tienes un ejemplo de código estructurado para recrear exactamente la misma distribución de la imagen (Cabecera, Categorías deslizables, Sección de Tienda con contador, Tarjeta de producto destacada, Botón de WhatsApp y Barra de navegación inferior) pero adaptado a tu negocio de chorizos.
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chorizos Artesanales</title>
+  <!-- Tailwind CSS para el diseño rápido -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome para los íconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Ocultar barra de scroll en las categorías */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-amber-50/30 text-stone-800 font-sans">
+
+  <!-- Contenedor simulación móvil -->
+  <div class="max-w-md mx-auto bg-white min-h-screen shadow-lg relative pb-20">
+    
+    <!-- 1. HEADER (Menú, Logo, Carrito) -->
+    <header class="flex items-center justify-between px-4 py-3 border-b border-stone-100">
+      <button class="text-stone-700 text-xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+      <!-- Logo adaptado (Estilo manuscrito/artesanal) -->
+      <div class="text-center">
+        <span class="block text-red-700 font-serif text-2xl font-extrabold tracking-tight leading-none">Don Chorizo</span>
+        <span class="text-[10px] text-stone-500 tracking-widest uppercase font-semibold">Artesanal & Parrilla</span>
+      </div>
+      
+      <!-- Carrito con contador -->
+      <div class="relative">
+        <button class="text-stone-700 text-xl">
+          <i class="fa-solid fa-basket-shopping"></i>
+        </button>
+        <span class="absolute -top-1 -right-2 bg-stone-900 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+      </div>
+    </header>
+
+    <!-- 2. CATEGORÍAS (Deslizables horizontalmente) -->
+    <section class="py-6 px-4">
+      <h2 class="text-center text-lg font-medium text-stone-800 mb-6">
+        Categorías de chorizos y embutidos Don Chorizo
+      </h2>
+      
+      <div class="flex space-x-6 overflow-x-auto no-scrollbar pb-2">
+        <!-- Categoría 1 (Seleccionada) -->
+        <div class="flex flex-col items-center flex-shrink-0 cursor-pointer">
+          <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-red-700 p-0.5 mb-2">
+            <img src="https://images.unsplash.com/photo-1585325701165-351af916e5ec?w=150&auto=format&fit=crop&q=80" alt="Tradicionales" class="w-full h-full object-cover rounded-full">
+          </div>
+          <span class="text-xs font-bold text-stone-800 border-b-2 border-red-700 pb-1">Tradicionales</span>
+        </div>
+
+        <!-- Categoría 2 -->
+        <div class="flex flex-col items-center flex-shrink-0 cursor-pointer">
+          <div class="w-16 h-16 rounded-full overflow-hidden border border-stone-200 mb-2">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=150&auto=format&fit=crop&q=80" alt="Gourmet" class="w-full h-full object-cover rounded-full">
+          </div>
+          <span class="text-xs text-stone-600">Gourmet</span>
+        </div>
+
+        <!-- Categoría 3 -->
+        <div class="flex flex-col items-center flex-shrink-0 cursor-pointer">
+          <div class="w-16 h-16 rounded-full overflow-hidden border border-stone-200 mb-2">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=150&auto=format&fit=crop&q=80" alt="Combos" class="w-full h-full object-cover rounded-full">
+          </div>
+          <span class="text-xs text-stone-600">Combos</span>
+        </div>
+
+        <!-- Categoría 4 -->
+        <div class="flex flex-col items-center flex-shrink-0 cursor-pointer">
+          <div class="w-16 h-16 rounded-full overflow-hidden border border-stone-200 mb-2">
+            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=150&auto=format&fit=crop&q=80" alt="Acompañantes" class="w-full h-full object-cover rounded-full">
+          </div>
+          <span class="text-xs text-stone-600">Acompañantes</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SECCIÓN TIENDA / PRODUCTOS -->
+    <section class="px-4 py-2">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-xl font-bold text-stone-800">Tienda</h3>
+        <span class="text-sm text-stone-500">24 productos encontrados</span>
+      </div>
+
+      <!-- Tarjeta de Producto Destacado (Estilo Don Jacobo) -->
+      <div class="relative rounded-2xl overflow-hidden bg-stone-100 mb-6 group cursor-pointer">
+        <!-- Fondo estilizado (reemplaza el morado/rosa por un tono cálido o terracota) -->
+        <div class="bg-orange-100/80 p-6 flex flex-col items-center justify-center min-h-[300px]">
+          <!-- Imagen de producto principal con alta calidad -->
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=80" alt="Chorizo Santandereano" class="w-64 h-48 object-cover rounded-lg shadow-md mb-4 transform group-hover:scale-105 transition-transform duration-300">
+          
+          <!-- Etiquetas del producto -->
+          <div class="text-center">
+            <span class="inline-block bg-red-700 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider mb-2">Fórmula Tradicional</span>
+            <h4 class="text-lg font-bold text-stone-800">Chorizo Santandereano Premium</h4>
+            <p class="text-sm text-stone-600 font-semibold mt-1">$18.900 / pqte x 5 und</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BOTONES DE FILTRO Y ORDENAMIENTO -->
+    <div class="flex border-t border-b border-stone-100 py-3 px-4 justify-between text-stone-700 font-medium text-sm bg-white sticky top-0 z-10">
+      <button class="flex items-center space-x-2 w-1/2 justify-center border-r border-stone-200">
+        <i class="fa-solid fa-sliders"></i>
+        <span>Filtros</span>
+      </button>
+      <button class="flex items-center space-x-2 w-1/2 justify-center">
+        <i class="fa-solid fa-arrow-down-wide-short"></i>
+        <span>Por Defecto</span>
+        <i class="fa-solid fa-chevron-down text-xs"></i>
+      </button>
+    </div>
+
+    <!-- 5. BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/xxxxxxxxxx" target="_blank" class="fixed bottom-20 right-4 bg-[#25D366] text-white p-3.5 rounded-full shadow-lg hover:bg-[#20ba5a] transition-colors z-20 flex items-center justify-center">
+      <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- 6. BARRA DE NAVEGACIÓN INFERIOR FIJA -->
+    <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-stone-100 flex justify-around py-2.5 text-stone-400 text-xs z-30">
+      <a href="#" class="flex flex-col items-center space-y-1 text-red-700">
+        <i class="fa-solid fa-house text-lg"></i>
+        <span>Inicio</span>
+      </a>
+      <a href="#" class="flex flex-col items-center space-y-1 hover:text-stone-700">
+        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+        <span>Buscar</span>
+      </a>
+      <div class="relative flex flex-col items-center space-y-1 hover:text-stone-700">
+        <i class="fa-solid fa-heart text-lg"></i>
+        <span>Favoritos</span>
+        <span class="absolute -top-1 right-2 bg-stone-800 text-white text-[9px] rounded-full w-3.5 h-3.5 flex items-center justify-center font-bold">0</span>
+      </div>
+      <a href="#" class="flex flex-col items-center space-y-1 hover:text-stone-700">
+        <i class="fa-solid fa-receipt text-lg"></i>
+        <span>Pedidos</span>
+      </a>
+      <a href="#" class="flex flex-col items-center space-y-1 hover:text-stone-700">
+        <i class="fa-solid fa-user text-lg"></i>
+        <span>Mi Cuenta</span>
+      </a>
+    </nav>
+
+  </div>
+
+</body>
+</html>
+```
+
+### Principales aspectos mantenidos de la referencia original:
+1. **Header compacto:** Mismo balance con el menú hamburguesa a la izquierda, logotipo al centro y carrito de compras numérico a la derecha.
+2. **Fila de categorías circular:** Los iconos redondos permiten al cliente deslizar rápidamente entre los diferentes tipos de chorizos o complementos.
+3. **Indicador visual:** La categoría activa mantiene una línea inferior que guía al usuario.
+4. **Enfoque visual de "tienda":** La tarjeta principal destaca el producto sobre un fondo cálido y ordenado, ideal para resaltar la frescura y calidad del embutido.
+
