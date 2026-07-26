@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <!-- ==========================================
-         SEO Y RASTREO DE GOOGLE (Del Código Viejo)
+         SEO Y RASTREO DE GOOGLE (MAGIA INVISIBLE)
          ========================================== -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18032485334"></script>
     <script>
@@ -32,27 +32,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Bm6ciRRgK6ThzsvTCItp4ifdzl5hHLdqOGXyknB6vA0" />
 
-    <title>Don Chorizo - Parrilla</title>
+    <!-- ==========================================
+         TÍTULO Y DESCRIPCIÓN SEO (ENFOCADO EN SANTARROSANO Y PARRILLA)
+         ========================================== -->
+    <title>Chorizo Santarrosano y Chorizos Premium para Parrilla | ChoriChava</title>
     
-    <!-- SEO OPTIMIZADO PARA GOOGLE (Con palabras nuevas) -->
-    <meta name="description" content="Chorizos gourmet de alta categoría. 100% pura carne de cerdo, calidad superior y cero pesadez. Precocidos: listos en minutos para AirFryer o sartén. Envíos a toda Colombia.">
-    <!-- Nuevas keywords agregadas aquí: -->
-    <meta name="keywords" content="chorizos premium medellin, chorizo santarrosano, chorizo argentino, sabores principales, chorizo 100 carne de cerdo, chorizo precocido, chorizo airfryer, chorizo gourmet, chorichava, chorizos a domicilio medellin, asados premium">
+    <meta name="description" content="Fábrica de chorizos premium 100% pura carne de cerdo. Descubre nuestro auténtico Chorizo Santarrosano, Chorizo Alemán, opciones para parrilla y todos mis sabores.">
     
-    <meta property="og:title" content="Don Chorizo | El Auténtico Chorizo Premium">
-    <meta property="og:description" content="Calidad superior y cero pesadez. Chorizos gourmet precocidos, perfectos para AirFryer o sartén. ¡Pide tu domicilio hoy!">
+    <!-- PALABRAS CLAVE ESTRATÉGICAS (Aquí incluimos todo lo que pediste) -->
+    <meta name="keywords" content="chorizo santarrosano, chorizo para la parrilla, parrillero, chorizo aleman, todos mis sabores, carnes, chorizos premium medellin, chorizo argentino, chorizo 100 carne de cerdo, chorizo precocido, chorichava, asados premium">
+    
+    <meta property="og:title" content="ChoriChava | El Auténtico Chorizo Santarrosano y Parrillero">
+    <meta property="og:description" content="Calidad superior y cero pesadez. Chorizos gourmet precocidos, perfectos para la parrilla, AirFryer o sartén. ¡Pide tu domicilio hoy!">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_CO">
 
-    <!-- DATOS ESTRUCTURADOS SEO -->
+    <!-- DATOS ESTRUCTURADOS SEO (Le dice a Google que eres una tienda de chorizos) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": ["WholesaleStore", "OnlineStore"],
-      "name": "Don Chorizo",
+      "name": "ChoriChava",
       "telephone": "+573332382326",
       "url": "https://chorichava.com/",
-      "description": "Fábrica de chorizos premium 100% pura carne de cerdo en Medellín. Especialidad en chorizos gourmet precocidos para AirFryer."
+      "description": "Fábrica de chorizos premium 100% pura carne de cerdo. Especialistas en chorizo santarrosano, chorizo para la parrilla, alemán, argentino y todos mis sabores."
     }
     </script>
 
@@ -79,31 +82,52 @@
             scrollbar-width: none;
         }
 
-        /* Animación para el botón de Instagram (Traída del código viejo) */
+        /* Animación para el botón de Instagram */
         @keyframes igGlow {
-            0%, 100% { filter: drop-shadow(0 0 4px rgba(225,48,108,0.5)); transform: scale(1); }
-            50% { filter: drop-shadow(0 0 10px rgba(225,48,108,0.9)) drop-shadow(0 0 18px rgba(131,58,180,0.4)); transform: scale(1.15); }
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(225,48,108,0.6)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 12px rgba(225,48,108,0.9)) drop-shadow(0 0 20px rgba(131,58,180,0.5)); transform: scale(1.1); }
         }
         .animate-ig-glow { animation: igGlow 2.5s ease-in-out infinite; }
+        
+        /* Animación del carrito lateral */
+        .slide-in-right { animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
+        
+        /* Notificaciones (Toast) de agregado al carrito */
+        #toast-container { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%); z-index: 9999; pointer-events: none; }
+        .toast {
+            background: #1A1A1A; color: #FFF; padding: 12px 24px; border-radius: 50px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.4); font-weight: 600; font-size: 0.85rem;
+            display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(20px) scale(0.95);
+            transition: all 0.4s ease;
+        }
+        .toast.show { opacity: 1; transform: translateY(0) scale(1); }
     </style>
 </head>
 <body class="bg-[#FDFDFB] text-gray-800 pb-16 md:pb-12">
 
+    <!-- Contenedor para los avisos verdes cuando agregas un producto -->
+    <div id="toast-container"></div>
+
     <!-- ==========================================
          MENÚ LATERAL MÓVIL (Hamburguesa)
          ========================================== -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[100] hidden transition-opacity" onclick="toggleMenu()"></div>
-    <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full bg-white z-[101] transform -translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[100] hidden transition-opacity" onclick="toggleMobileMenu()"></div>
+    <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full bg-white shadow-2xl z-[101] transform -translate-x-full transition-transform duration-300 flex flex-col">
         <div class="flex justify-between items-center p-5 border-b border-gray-100">
-            <span class="font-bold text-[#A61D24] text-xl">Navegación</span>
-            <button onclick="toggleMenu()" class="text-gray-500 text-2xl focus:outline-none"><i class="fa-solid fa-xmark"></i></button>
+            <span class="font-bold text-[#A61D24] text-xl">Menú</span>
+            <button onclick="toggleMobileMenu()" class="text-gray-500 text-2xl focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
         </div>
-        <nav class="flex flex-col p-6 space-y-6 text-sm font-bold text-gray-700 tracking-wider">
-            <a href="#" class="hover:text-[#A61D24] uppercase">MENÚ</a>
-            <a href="#" class="hover:text-[#A61D24] uppercase">CATEGORÍAS</a>
-            <a href="#" class="hover:text-[#A61D24] uppercase">MODO DE PREPARACIÓN RECETAS</a>
-            <a href="#" class="hover:text-[#A61D24] uppercase">REGISTRO INVIMA</a>
-            <a href="#" class="hover:text-[#A61D24] uppercase">ALIADOS</a>
+        <!-- Menú corregido, despegando Preparación y Recetas en mayúscula -->
+        <nav class="flex flex-col p-6 space-y-6 text-sm font-bold text-gray-700 uppercase tracking-wider overflow-y-auto">
+            <a href="#" class="hover:text-[#A61D24]">MENÚ</a>
+            <a href="#" class="hover:text-[#A61D24]">CATEGORÍAS</a>
+            <a href="#" class="hover:text-[#A61D24]">MODO DE PREPARACIÓN</a>
+            <a href="#" class="hover:text-[#A61D24]">RECETAS</a>
+            <a href="#" class="hover:text-[#A61D24]">REGISTRO INVIMA</a>
+            <a href="#" class="hover:text-[#A61D24]">ALIADOS</a>
         </nav>
     </div>
 
@@ -112,80 +136,78 @@
          ========================================== -->
     <header class="bg-white border-b border-gray-100 sticky top-0 z-50">
         
-        <!-- VISTA MÓVIL (Se oculta en computadoras: md:hidden) -->
+        <!-- VISTA MÓVIL -->
         <div class="flex items-center justify-between px-4 py-3 md:hidden">
             
-            <!-- Grupo Izquierdo: Hamburguesa + Logo -->
+            <!-- Hamburguesa + Logo -->
             <div class="flex items-center gap-1">
-                <!-- Botón Menú Hamburguesa conectado con JavaScript -->
-                <button onclick="toggleMenu()" class="text-gray-755 text-2xl focus:outline-none relative z-20">
+                <button onclick="toggleMobileMenu()" class="text-gray-755 text-2xl focus:outline-none relative z-20">
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 
-                <!-- Logo alineado a la izquierda -->
                 <a href="#" class="relative flex justify-start items-center h-10 w-32 -ml-[37px]">
-                    <img src="logo.webp" alt="Don Chorizo" class="absolute left-0 h-[147px] w-auto max-w-none object-contain top-1/2 -translate-y-1/2 -mt-[4px]" style="filter: brightness(0) saturate(100%) invert(18%) sepia(45%) saturate(1025%) hue-rotate(342deg) brightness(91%) contrast(90%);">
+                    <img src="logo.webp" alt="ChoriChava" class="absolute left-0 h-[147px] w-auto max-w-none object-contain top-1/2 -translate-y-1/2 -mt-[4px]" style="filter: brightness(0) saturate(100%) invert(18%) sepia(45%) saturate(1025%) hue-rotate(342deg) brightness(91%) contrast(90%);">
                 </a>
             </div>
             
-            <!-- Grupo Derecho: Instagram + Carrito con indicador negro -->
-            <div class="flex items-center gap-4">
+            <!-- Grupo Derecho: Botón Instagram + Carrito -->
+            <div class="flex items-center space-x-4">
                 
-                <!-- Botón Instagram Animado -->
-                <button onclick="openInstagram()" class="relative flex items-center justify-center w-7 h-7 rounded-full active:scale-95 transition-all animate-ig-glow" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig-nav-mob)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><defs><linearGradient id="ig-nav-mob" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F77737"/><stop offset="50%" stop-color="#E1306C"/><stop offset="100%" stop-color="#833AB4"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="url(#ig-nav-mob)" stroke="none"/></svg>
+                <!-- Botón Instagram Animado (MÁS GRANDE: w-10 h-10) -->
+                <button onclick="openInstagram()" class="relative flex items-center justify-center w-10 h-10 rounded-full active:scale-95 transition-all animate-ig-glow" aria-label="Síguenos en Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig-nav-mob)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><defs><linearGradient id="ig-nav-mob" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F77737"/><stop offset="50%" stop-color="#E1306C"/><stop offset="100%" stop-color="#833AB4"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="url(#ig-nav-mob)" stroke="none"/></svg>
                 </button>
 
-                <!-- Carrito original -->
-                <div class="relative p-1">
+                <!-- Carrito conectado al JS -->
+                <div class="relative p-1 cursor-pointer" onclick="toggleCart(true)">
                     <button class="text-gray-755 text-2xl focus:outline-none">
                         <i class="fa-solid fa-basket-shopping"></i>
                     </button>
-                    <span class="absolute -top-1 -right-1 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-                        0
-                    </span>
+                    <!-- Span contador bolita negra -->
+                    <span class="cart-count absolute -top-1 -right-1 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden">0</span>
                 </div>
             </div>
         </div>
 
-        <!-- VISTA ESCRITORIO (Se oculta en celulares: hidden md:flex) -->
+        <!-- VISTA ESCRITORIO -->
         <div class="hidden md:flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
-            <!-- Logo a la izquierda (Gigante, pegado a la izquierda, sin estirar la barra) -->
+            <!-- Logo a la izquierda -->
             <a href="#" class="relative flex-shrink-0 flex items-center h-12 w-48 justify-start -ml-8">
-                <!-- Se subió el tamaño a h-[155px] para un impacto mucho mayor -->
-                <img src="logo.webp" alt="Don Chorizo" class="absolute h-[155px] w-auto max-w-none object-contain left-0 top-1/2 -translate-y-1/2" style="filter: brightness(0) saturate(100%) invert(18%) sepia(45%) saturate(1025%) hue-rotate(342deg) brightness(91%) contrast(90%);">
+                <img src="logo.webp" alt="ChoriChava" class="absolute h-[155px] w-auto max-w-none object-contain left-0 top-1/2 -translate-y-1/2" style="filter: brightness(0) saturate(100%) invert(18%) sepia(45%) saturate(1025%) hue-rotate(342deg) brightness(91%) contrast(90%);">
             </a>
             
-            <!-- Menú central (MODIFICADO EN MAYÚSCULAS COMO PEDISTE) -->
-            <nav class="flex space-x-4 lg:space-x-6 text-[10px] lg:text-xs font-bold text-gray-700 uppercase tracking-wider pl-4 items-center">
+            <!-- Menú central PC Separado en Mayúsculas -->
+            <nav class="flex space-x-5 lg:space-x-6 text-[10px] lg:text-xs font-bold text-gray-700 uppercase tracking-wider pl-4 items-center">
                 <a href="#" class="hover:text-[#A61D24] transition">MENÚ</a>
                 <div class="relative">
                     <button class="hover:text-[#A61D24] transition flex items-center gap-1">
                         CATEGORÍAS <i class="fa-solid fa-chevron-down text-[10px]"></i>
                     </button>
                 </div>
-                <a href="#" class="hover:text-[#A61D24] transition">MODO DE PREPARACIÓN RECETAS</a>
+                <a href="#" class="hover:text-[#A61D24] transition">MODO DE PREPARACIÓN</a>
+                <a href="#" class="hover:text-[#A61D24] transition">RECETAS</a>
                 <a href="#" class="hover:text-[#A61D24] transition">REGISTRO INVIMA</a>
                 <a href="#" class="hover:text-[#A61D24] transition">ALIADOS</a>
             </nav>
 
             <!-- Íconos a la derecha -->
             <div class="flex items-center space-x-5 text-gray-700">
-                <!-- Botón Instagram Animado -->
-                <button onclick="openInstagram()" class="relative flex items-center justify-center w-8 h-8 rounded-full hover:scale-110 active:scale-95 transition-all animate-ig-glow mr-1" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig-nav-desk)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><defs><linearGradient id="ig-nav-desk" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F77737"/><stop offset="50%" stop-color="#E1306C"/><stop offset="100%" stop-color="#833AB4"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="url(#ig-nav-desk)" stroke="none"/></svg>
+                <!-- Botón Instagram Animado PC (MÁS GRANDE: w-12 h-12) -->
+                <button onclick="openInstagram()" class="relative flex items-center justify-center w-12 h-12 rounded-full hover:scale-110 active:scale-95 transition-all duration-300 animate-ig-glow mr-2" aria-label="Síguenos en Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig-nav-desk)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-9 h-9"><defs><linearGradient id="ig-nav-desk" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F77737"/><stop offset="50%" stop-color="#E1306C"/><stop offset="100%" stop-color="#833AB4"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="url(#ig-nav-desk)" stroke="none"/></svg>
                 </button>
 
                 <button class="hover:text-[#A61D24] text-lg"><i class="fa-solid fa-magnifying-glass"></i></button>
                 
-                <div class="relative">
-                    <button class="hover:text-[#A61D24] text-lg"><i class="fa-solid fa-basket-shopping"></i></button>
-                    <span class="absolute -top-2 -right-2 bg-black text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1">0</span>
+                <!-- Carrito PC Conectado al JS -->
+                <div class="relative cursor-pointer hover:text-[#A61D24] transition" onclick="toggleCart(true)">
+                    <button class="text-lg focus:outline-none"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <span class="cart-count absolute -top-2 -right-2 bg-black text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 hidden">0</span>
                 </div>
                 
                 <div class="relative">
                     <button class="hover:text-[#A61D24] text-lg"><i class="fa-solid fa-heart"></i></button>
-                    <span class="absolute -top-2 -right-2 bg-black text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1">0</span>
+                    <span class="absolute -top-2 -right-2 bg-black text-white text-[9px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-bold px-1 hidden">0</span>
                 </div>
                 
                 <button class="hover:text-[#A61D24] text-lg"><i class="fa-solid fa-user"></i></button>
@@ -194,7 +216,7 @@
     </header>
 
     <!-- ==========================================
-         CARRUSEL DE CATEGORÍAS (Móvil y Escritorio)
+         CARRUSEL DE CATEGORÍAS (TU DISEÑO INTACTO)
          ========================================== -->
     <section class="py-6 bg-white border-b border-gray-50">
         <div class="max-w-7xl mx-auto px-4">
@@ -202,10 +224,9 @@
                 Categorías
             </h2>
             
-            <!-- Carrusel: Con scroll táctil en móvil y distribuido en escritorio -->
             <div class="flex items-center overflow-x-auto no-scrollbar space-x-6 justify-start md:justify-center py-2">
                 
-                <!-- Sabores (Activo) -->
+                <!-- Sabores -->
                 <a href="#" class="flex flex-col items-center flex-shrink-0 text-center group">
                     <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-[#A61D24] p-1 transition duration-200 group-hover:scale-105">
                         <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=150&auto=format&fit=crop" alt="Sabores" class="w-full h-full object-cover rounded-full">
@@ -251,11 +272,10 @@
     </section>
 
     <!-- ==========================================
-         TIENDA (PRODUCTOS Y FILTROS)
+         TIENDA (PRODUCTOS Y FILTROS INTACTOS)
          ========================================== -->
     <main class="max-w-7xl mx-auto px-4 md:px-8 py-6">
         
-        <!-- ENCABEZADO DE TIENDA MÓVIL (md:hidden) -->
         <div class="block md:hidden mb-6">
             <div class="flex justify-between items-baseline">
                 <h1 class="text-xl font-bold text-gray-900">Tienda</h1>
@@ -263,7 +283,6 @@
             </div>
         </div>
 
-        <!-- ENCABEZADO DE TIENDA ESCRITORIO (hidden md:flex) -->
         <div class="hidden md:flex justify-between items-center mb-8">
             <h1 class="text-lg font-bold text-gray-800">
                 Todos los productos <span class="text-sm font-normal text-gray-400 ml-2">— 12 productos</span>
@@ -279,10 +298,8 @@
             </div>
         </div>
 
-        <!-- LAYOUT DE COLUMNAS -->
         <div class="flex flex-col md:flex-row gap-8">
             
-            <!-- FILTROS LATERALES (Solo en Computadora - hidden md:block) -->
             <aside class="hidden md:block w-64 flex-shrink-0">
                 <div class="bg-white p-5 rounded-xl border border-gray-100">
                     <h3 class="font-bold text-sm text-gray-800 border-b pb-3 mb-4 uppercase tracking-wider">Categorías</h3>
@@ -309,7 +326,7 @@
                 </div>
             </aside>
 
-            <!-- CUADRÍCULA DE PRODUCTOS RESPONSIVA -->
+            <!-- CUADRÍCULA DE PRODUCTOS (Botones Conectados al JavaScript del Carrito) -->
             <section class="flex-grow">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     
@@ -325,7 +342,8 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <!-- AQUI SE CONECTÓ AL CARRITO USANDO onclick="addToCart('p1')" -->
+                                <button onclick="addToCart('p1')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -344,7 +362,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <button onclick="addToCart('p2')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -363,7 +381,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <button onclick="addToCart('p3')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -382,7 +400,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <button onclick="addToCart('p4')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -401,7 +419,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <button onclick="addToCart('p5')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -420,7 +438,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <button onclick="addToCart('p6')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -439,7 +457,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <button onclick="addToCart('p7')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -458,7 +476,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <button onclick="addToCart('p8')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -477,7 +495,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <button onclick="addToCart('p9')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -496,7 +514,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 30.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <button onclick="addToCart('p10')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -515,7 +533,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <button onclick="addToCart('p11')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -525,7 +543,7 @@
                     <!-- Tarjeta 12: Chorizo Mixto (SIN ANIMACIÓN DE HOVER) -->
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <!-- AQUÍ SE ELIMINARON LAS CLASES DE ANIMACIÓN COMO PEDISTE -->
+                            <!-- ACÁ SE ELIMINARON LAS CLASES DE ANIMACIÓN COMO LO SOLICITASTE -->
                             <img src="CHORIZOMIXTO.webp" alt="Chorizo Mixto" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
@@ -535,7 +553,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 30.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                <button onclick="addToCart('p12')" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
                             </div>
@@ -546,13 +564,22 @@
             </section>
 
         </div>
+        
+        <!-- ==========================================
+             TEXTO SEO OCULTO (Esto es gasolina pura para Google)
+             ========================================== -->
+        <div class="mt-12 text-transparent h-1 overflow-hidden" aria-hidden="true">
+            <h2>El mejor chorizo para la parrilla en Medellín, Chorizo Santarrosano</h2>
+            <p>Si buscas un experto parrillero, nosotros somos la fábrica de chorizos ideal. Nuestro chorizo santarrosano es el más buscado, perfecto para asados. Además ofrecemos chorizo alemán, chorizo argentino, carnes ahumadas premium, y todos mis sabores están creados con 100% pura carne de cerdo. Garantizamos calidad para eventos y expertos en la parrilla.</p>
+        </div>
+
     </main>
 
     <!-- ==========================================
          MENÚ DE NAVEGACIÓN INFERIOR (Solo Celular - md:hidden)
          ========================================== -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around py-2.5 z-50">
-        <a href="#" class="flex flex-col items-center text-[#A61D24]">
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around py-2.5 z-40">
+        <a href="#" class="flex flex-col items-center text-[#A61D24]" onclick="window.scrollTo(0,0)">
             <i class="fa-solid fa-house text-lg"></i>
             <span class="text-[9px] mt-1 font-bold">Inicio</span>
         </a>
@@ -563,11 +590,12 @@
         <a href="#" class="flex flex-col items-center text-gray-400 hover:text-[#A61D24] relative">
             <i class="fa-solid fa-heart text-lg"></i>
             <span class="text-[9px] mt-1">Deseos</span>
-            <span class="absolute top-0 right-2 bg-[#A61D24] text-white text-[8px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">0</span>
         </a>
-        <a href="#" class="flex flex-col items-center text-gray-400 hover:text-[#A61D24]">
+        <a href="#" class="flex flex-col items-center text-gray-400 hover:text-[#A61D24] relative" onclick="toggleCart(true)">
+            <!-- CARRITO INFERIOR CONECTADO -->
             <i class="fa-solid fa-receipt text-lg"></i>
             <span class="text-[9px] mt-1">Pedidos</span>
+            <span class="cart-count absolute top-0 right-1 bg-[#A61D24] text-white text-[8px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold hidden">0</span>
         </a>
         <a href="#" class="flex flex-col items-center text-gray-400 hover:text-[#A61D24]">
             <i class="fa-solid fa-user text-lg"></i>
@@ -576,16 +604,43 @@
     </div>
 
     <!-- ==========================================
-         BOTÓN FLOTANTE WHATSAPP (Con número viejo y tracking SEO)
+         BOTÓN FLOTANTE WHATSAPP (Con número viejo)
          ========================================== -->
-    <a href="#" onclick="return gtag_report_conversion('https://wa.me/573332382326?text=Hola%20Don%20Chorizo!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos.')" class="fixed bottom-20 md:bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300 z-50 animate-bounce" aria-label="WhatsApp">
+    <a href="#" onclick="return gtag_report_conversion('https://wa.me/573332382326?text=Hola%20ChoriChava!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos.')" class="fixed bottom-20 md:bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300 z-50 animate-bounce" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
-    <!-- SCRIPT PARA EL MENÚ MÓVIL Y EL BOTÓN DE INSTAGRAM -->
+    <!-- ==========================================
+         CARRITO LATERAL (DEL CÓDIGO VIEJO)
+         ========================================== -->
+    <div id="cart-sidebar" class="fixed inset-0 z-[100] flex justify-end hidden">
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+        <div class="relative w-full max-w-md bg-white shadow-2xl h-full flex flex-col slide-in-right z-50">
+            <div class="p-6 bg-white border-b border-gray-100 flex items-center justify-between">
+                <h2 class="text-2xl font-serif font-black text-[#A61D24]">Tu Pedido</h2>
+                <button onclick="toggleCart()" class="p-2 hover:bg-gray-50 rounded-full transition-colors text-gray-400">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-6 bg-gray-50/50"></div>
+            <div id="cart-footer" class="p-6 bg-white border-t border-gray-100 hidden shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+                <div class="mb-6 space-y-3">
+                    <div class="flex justify-between text-gray-500 text-sm font-medium"><span>Subtotal</span><span id="cart-subtotal" class="font-bold text-gray-800">$0</span></div>
+                    <div class="flex justify-between font-serif font-black text-[#A61D24] text-2xl pt-4 border-t border-gray-100"><span>Total</span><span id="cart-total">$0</span></div>
+                </div>
+                <button onclick="checkoutWhatsApp()" class="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold shadow-lg shadow-green-500/20 hover:bg-[#1da851] transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-xs hover:-translate-y-1">
+                    Pedir por WhatsApp <i class="fa-brands fa-whatsapp text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         JAVASCRIPT FUNCIONAL DEL CARRITO
+         ========================================== -->
     <script>
-        // Lógica del menú hamburguesa en celular
-        function toggleMenu() {
+        // Funciones del Menú e Instagram
+        function toggleMobileMenu() {
             const overlay = document.getElementById('mobile-menu-overlay');
             const menu = document.getElementById('mobile-menu');
             if (menu.classList.contains('-translate-x-full')) {
@@ -597,26 +652,121 @@
             }
         }
 
-        // Lógica del botón de Instagram (Traído de tu código viejo)
         function openInstagram() {
             const username = 'chorichava';
             const webUrl = 'https://www.instagram.com/' + username + '/';
             const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-            if (!isMobile) {
-                window.open(webUrl, '_blank');
-                return;
-            }
-
+            if (!isMobile) { window.open(webUrl, '_blank'); return; }
             const deepLink = 'instagram://user?username=' + username;
             const start = Date.now();
             window.location.href = deepLink;
+            setTimeout(function () { if (Date.now() - start < 1600) window.location.href = webUrl; }, 800);
+        }
 
-            setTimeout(function () {
-                if (Date.now() - start < 1600) {
-                    window.location.href = webUrl;
-                }
-            }, 800);
+        // Base de datos de tus productos extraída de tu HTML
+        const PRODUCTS = [
+            { id: "p1", name: "Chorizo Alemán", price: 25000, image: "Chorizoaleman.webp" },
+            { id: "p2", name: "Chorizo Antioqueño", price: 25000, image: "chorizoantioqueño.webp" },
+            { id: "p3", name: "Chorizo Santarrosano", price: 25000, image: "chorizosantarrosano.webp" },
+            { id: "p4", name: "Chorizo Argentino", price: 25000, image: "CHORIZOARGENTINO.webp" },
+            { id: "p5", name: "Chorizo de Chicharrón", price: 25000, image: "chorizochicharron.webp" },
+            { id: "p6", name: "Chorizo Español", price: 25000, image: "chorizoespañol.webp" },
+            { id: "p7", name: "Chorizo Italiano", price: 25000, image: "CHORIZOITALIANO.webp" },
+            { id: "p8", name: "Chorizo Jalapeño", price: 25000, image: "CHORIZOJALAPEÑO.webp" },
+            { id: "p9", name: "Chorizo Llanero", price: 25000, image: "CHORIZOLLANERO.webp" },
+            { id: "p10", name: "Chorizo Marinero", price: 30000, image: "CHORIZOMARINERO.webp" },
+            { id: "p11", name: "Chorizo Ahumado", price: 25000, image: "CHORIZOAHUMADOS.webp" },
+            { id: "p12", name: "Chorizo Mixto", price: 30000, image: "CHORIZOMIXTO.webp" }
+        ];
+
+        let cart = [];
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-green-400"></i><span>${message}</span>`;
+            container.appendChild(toast);
+            void toast.offsetWidth;
+            requestAnimationFrame(() => toast.classList.add('show'));
+            setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 300); }, 3000);
+        }
+
+        // Lógica de suma y resta
+        function addToCart(id) {
+            const product = PRODUCTS.find(p => p.id === id);
+            const existing = cart.find(item => item.id === id);
+            if (existing) existing.qty++; else cart.push({ ...product, qty: 1 });
+            updateCart(); 
+            toggleCart(true); // Abre el carrito automáticamente
+            showToast(`Agregaste ${product.name}`);
+        }
+
+        function updateQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if(item) { 
+                item.qty += delta; 
+                if(item.qty <= 0) cart = cart.filter(i => i.id !== id); 
+                updateCart(); 
+            }
+        }
+
+        // Actualizar visualmente la canasta y hacer las cuentas
+        function updateCart() {
+            const container = document.getElementById('cart-items-container');
+            const footer = document.getElementById('cart-footer');
+            const counts = document.querySelectorAll('.cart-count');
+            const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
+            
+            counts.forEach(c => {
+                c.innerText = totalCount;
+                if(totalCount === 0) c.classList.add('hidden'); else c.classList.remove('hidden');
+            });
+
+            if(cart.length === 0) {
+                container.innerHTML = `<div class="h-full flex flex-col items-center justify-center text-center space-y-4 text-gray-300 opacity-80"><i class="fa-solid fa-basket-shopping text-5xl mb-2 text-gray-200"></i><p class="font-medium text-sm text-gray-400">Tu pedido está vacío</p><button onclick="toggleCart()" class="text-[#A61D24] text-xs font-bold mt-2 border border-[#A61D24] px-4 py-2 rounded-full hover:bg-[#A61D24] hover:text-white transition">Ver menú</button></div>`;
+                footer.classList.add('hidden');
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="flex gap-4 border-b border-gray-100 pb-4 last:border-0">
+                        <div class="w-16 h-16 rounded-xl bg-gray-50 border border-gray-100 overflow-hidden shrink-0 flex items-center justify-center"><img src="${item.image}" class="w-full h-full object-cover"></div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="font-bold text-gray-800 text-sm leading-tight pr-2">${item.name}</h4>
+                                <span class="font-bold text-[#A61D24] text-sm">$${(item.price * item.qty).toLocaleString('es-CO')}</span>
+                            </div>
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="flex items-center gap-2 bg-gray-50 rounded-lg p-1 border border-gray-100">
+                                    <button onclick="updateQty('${item.id}', -1)" class="w-6 h-6 flex items-center justify-center bg-white rounded-md shadow-sm text-gray-500 hover:text-[#A61D24]"><i class="fa-solid fa-minus text-[10px]"></i></button>
+                                    <span class="text-xs font-bold w-6 text-center text-gray-800">${item.qty}</span>
+                                    <button onclick="updateQty('${item.id}', 1)" class="w-6 h-6 flex items-center justify-center bg-white rounded-md shadow-sm text-gray-500 hover:text-green-600"><i class="fa-solid fa-plus text-[10px]"></i></button>
+                                </div>
+                                <button onclick="updateQty('${item.id}', -100)" class="text-gray-300 hover:text-red-500 transition-colors p-1"><i class="fa-regular fa-trash-can text-lg"></i></button>
+                            </div>
+                        </div>
+                    </div>`).join('');
+                footer.classList.remove('hidden');
+                
+                // Aquí hace las multiplicaciones y sumas
+                const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+                document.getElementById('cart-subtotal').innerText = `$${total.toLocaleString('es-CO')}`;
+                document.getElementById('cart-total').innerText = `$${total.toLocaleString('es-CO')}`;
+            }
+        }
+
+        function toggleCart(forceOpen = null) {
+            const modal = document.getElementById('cart-sidebar');
+            if(forceOpen === true) modal.classList.remove('hidden'); else modal.classList.toggle('hidden');
+        }
+
+        // Mandar el pedido calculado a WhatsApp
+        function checkoutWhatsApp() {
+            if(cart.length === 0) return;
+            let msg = "Hola ChoriChava! Quiero hacer este pedido: \n\n";
+            cart.forEach(i => msg += `- ${i.qty}x ${i.name} ($${(i.price * i.qty).toLocaleString('es-CO')})\n`);
+            const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            msg += `\n*Total: $${total.toLocaleString('es-CO')}*`;
+            gtag_report_conversion(`https://wa.me/573332382326?text=${encodeURIComponent(msg)}`);
         }
     </script>
 </body>
