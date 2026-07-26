@@ -177,21 +177,20 @@
         <div class="block md:hidden mb-6">
             <div class="flex justify-between items-baseline">
                 <h1 class="text-xl font-bold text-gray-900">Tienda</h1>
-                <span class="text-xs text-gray-400">24 productos encontrados</span>
+                <span class="text-xs text-gray-400">12 productos encontrados</span>
             </div>
-            <!-- Se ha removido completamente la barra de filtros/símbolos que estaba aquí -->
         </div>
 
         <!-- ENCABEZADO DE TIENDA ESCRITORIO (hidden md:flex) -->
         <div class="hidden md:flex justify-between items-center mb-8">
             <h1 class="text-lg font-bold text-gray-800">
-                Todos los productos <span class="text-sm font-normal text-gray-400 ml-2">— 24 productos</span>
+                Todos los productos <span class="text-sm font-normal text-gray-400 ml-2">— 12 productos</span>
             </h1>
             
             <div class="flex items-center gap-2 text-xs">
-                <span class="text-gray-400">Sort By:</span>
+                <span class="text-gray-400">Ordenar Por:</span>
                 <select class="border border-gray-200 rounded px-3 py-1.5 bg-white text-gray-700 focus:outline-none">
-                    <option>Featured</option>
+                    <option>Destacados</option>
                     <option>Precio: de menor a mayor</option>
                     <option>Precio: de mayor a menor</option>
                 </select>
@@ -215,25 +214,13 @@
                         <li class="flex items-center justify-between">
                             <label class="flex items-center gap-3 cursor-pointer">
                                 <input type="radio" name="filtro-cat" class="text-[#A61D24] focus:ring-[#A61D24] h-4.5 w-4.5">
-                                <span>Tradicionales (13)</span>
+                                <span>Tradicionales (6)</span>
                             </label>
                         </li>
                         <li class="flex items-center justify-between">
                             <label class="flex items-center gap-3 cursor-pointer">
                                 <input type="radio" name="filtro-cat" class="text-[#A61D24] focus:ring-[#A61D24] h-4.5 w-4.5">
-                                <span>Gourmet (13)</span>
-                            </label>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="radio" name="filtro-cat" class="text-[#A61D24] focus:ring-[#A61D24] h-4.5 w-4.5">
-                                <span>Combos (4)</span>
-                            </label>
-                        </li>
-                        <li class="flex items-center justify-between">
-                            <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="radio" name="filtro-cat" class="text-[#A61D24] focus:ring-[#A61D24] h-4.5 w-4.5">
-                                <span>Acompañantes (4)</span>
+                                <span>Gourmet (6)</span>
                             </label>
                         </li>
                     </ul>
@@ -242,114 +229,12 @@
 
             <!-- CUADRÍCULA DE PRODUCTOS RESPONSIVA -->
             <section class="flex-grow">
-                <!-- Se ajusta de 1 columna en teléfonos pequeños, a 2 en medianos, y a 3 en pantallas grandes junto al menú de filtros -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     
-                    <!-- Tarjeta de Producto 1 -->
+                    <!-- Tarjeta 1: Chorizo Ahumado -->
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
                         <div class="relative pb-[80%] bg-gray-50">
-                            <img src="chichita.svg" alt="Chorizo de Chicharrón" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
-                        </div>
-                        <div class="p-4">
-                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
-                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo de Chicharrón</h3>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
-                                    Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta de Producto 2 -->
-                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
-                        <div class="relative pb-[80%] bg-gray-50">
-                            <img src="CHORIZOARGENTINO.svg" alt="Chorizo Argentino" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
-                        </div>
-                        <div class="p-4">
-                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
-                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Argentino</h3>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
-                                    Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta de Producto 3 -->
-                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
-                        <div class="relative pb-[80%] bg-gray-50">
-                            <img src="chorisoantioqueño.svg" alt="Chorizo Antioqueño" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
-                        </div>
-                        <div class="p-4">
-                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
-                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Antioqueño</h3>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
-                                    Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta de Producto 4 -->
-                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
-                        <div class="relative pb-[80%] bg-gray-50">
-                            <img src="Chorizoespañol.svg" alt="Chorizo Español" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
-                        </div>
-                        <div class="p-4">
-                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
-                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Español</h3>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
-                                    Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta de Producto 5 -->
-                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
-                        <div class="relative pb-[80%] bg-gray-50">
-                            <img src="santarrosa%20(1).webp" alt="Chorizo Santarrosano" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
-                        </div>
-                        <div class="p-4">
-                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
-                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Santarrosano</h3>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
-                                    Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta de Producto 6 -->
-                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
-                        <div class="relative pb-[80%] bg-gray-50">
-                            <img src="chorizojalapeño.webp" alt="Chorizo Jalapeño" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
-                        </div>
-                        <div class="p-4">
-                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
-                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Jalapeño</h3>
-                            <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
-                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
-                                    Agregar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tarjeta de Producto 7 -->
-                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
-                        <div class="relative pb-[80%] bg-gray-50">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
                             <img src="Chorizoahumado.webp" alt="Chorizo Ahumado" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
                         </div>
                         <div class="p-4">
@@ -364,14 +249,195 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta de Producto 8 -->
+                    <!-- Tarjeta 2: Chorizo Alemán -->
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
                         <div class="relative pb-[80%] bg-gray-50">
-                            <img src="chorisolllanerito.webp" alt="Chorizo Llanero" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
+                            <img src="Chorizoaleman.webp" alt="Chorizo Alemán" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Alemán</h3>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 27.000</span>
+                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 3: Chorizo Antioqueño -->
+                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
+                        <div class="relative pb-[80%] bg-gray-50">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
+                            <img src="Chorizoantioqueño.webp" alt="Chorizo Antioqueño" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
+                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Antioqueño</h3>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
+                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 4: Chorizo Argentino -->
+                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
+                        <div class="relative pb-[80%] bg-gray-50">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
+                            <img src="Chorizoargentino.webp" alt="Chorizo Argentino" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Argentino</h3>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 26.500</span>
+                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 5: Chorizo de Chicharrón -->
+                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
+                        <div class="relative pb-[80%] bg-gray-50">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
+                            <img src="Chorizochicharron.webp" alt="Chorizo de Chicharrón" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
+                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo de Chicharrón</h3>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
+                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 6: Chorizo Español -->
+                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
+                        <div class="relative pb-[80%] bg-gray-50">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
+                            <img src="Chorizoespañol.webp" alt="Chorizo Español" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Español</h3>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 28.000</span>
+                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 7: Chorizo Italiano -->
+                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
+                        <div class="relative pb-[80%] bg-gray-50">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
+                            <img src="Chorizoitaliano.webp" alt="Chorizo Italiano" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Italiano</h3>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 26.500</span>
+                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 8: Chorizo Jalapeño -->
+                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
+                        <div class="relative pb-[80%] bg-gray-50">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
+                            <img src="Chorizojalapeño.webp" alt="Chorizo Jalapeño" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Jalapeño</h3>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.500</span>
+                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 9: Chorizo Llanero -->
+                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
+                        <div class="relative pb-[80%] bg-gray-50">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
+                            <img src="Chorizollanero.webp" alt="Chorizo Llanero" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
                         </div>
                         <div class="p-4">
                             <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
                             <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Llanero</h3>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
+                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 10: Chorizo Marinero -->
+                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
+                        <div class="relative pb-[80%] bg-gray-50">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
+                            <img src="Chorizomarinero.webp" alt="Chorizo Marinero" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Marinero</h3>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 29.000</span>
+                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 11: Chorizo Mixto -->
+                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
+                        <div class="relative pb-[80%] bg-gray-50">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
+                            <img src="Chorizomixto.webp" alt="Chorizo Mixto" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
+                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Mixto</h3>
+                            <div class="flex items-center justify-between mt-4">
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
+                                <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
+                                    Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 12: Chorizo Santarrosano -->
+                    <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200">
+                        <div class="relative pb-[80%] bg-gray-50">
+                            <!-- Imagen mapeada exactamente al nombre de tu archivo -->
+                            <img src="Chorizosantarrosano.webp" alt="Chorizo Santarrosano" class="absolute inset-0 w-full h-full object-cover p-3 rounded-3xl">
+                        </div>
+                        <div class="p-4">
+                            <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
+                            <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1">Chorizo Santarrosano</h3>
                             <div class="flex items-center justify-between mt-4">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
@@ -415,7 +481,7 @@
     </div>
 
     <!-- ==========================================
-         BOTÓN FLOTANTE WHATSAPP (Móvil se eleva un poco para no tapar la navegación)
+         BOTÓN FLOTANTE WHATSAPP
          ========================================== -->
     <a href="https://wa.me/573000000000" target="_blank" class="fixed bottom-20 md:bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300 z-50 animate-bounce" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
