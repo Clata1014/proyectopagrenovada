@@ -42,15 +42,11 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
             
-            <!-- Logo Centrado en Móvil -->
-            <div class="flex flex-col items-center text-center">
-                <span class="logo-font text-xl font-bold text-[#A61D24] leading-none tracking-wide">
-                    Don Chorizo
-                </span>
-                <span class="text-[8px] font-semibold tracking-[0.25em] text-gray-400 uppercase mt-1">
-                    PARRILLA
-                </span>
-            </div>
+            <!-- Logo Centrado en Móvil (Grande sin estirar la barra) -->
+            <a href="#" class="relative flex justify-center items-center h-10 w-40">
+                <!-- Se subió de h-20 (80px) a h-[83px] (+3px) y se aplicó filtro café oscuro -->
+                <img src="logo.webp" alt="Don Chorizo" class="absolute h-[83px] w-auto object-contain top-1/2 -translate-y-1/2" style="filter: brightness(0) saturate(100%) invert(18%) sepia(45%) saturate(1025%) hue-rotate(342deg) brightness(91%) contrast(90%);">
+            </a>
             
             <!-- Carrito con indicador negro -->
             <div class="relative p-1">
@@ -65,18 +61,14 @@
 
         <!-- VISTA ESCRITORIO (Se oculta en celulares: hidden md:flex) -->
         <div class="hidden md:flex items-center justify-between px-8 py-4 max-w-7xl mx-auto">
-            <!-- Logo a la izquierda -->
-            <div class="flex flex-col items-start">
-                <span class="logo-font text-2xl font-bold text-[#A61D24] leading-none tracking-wide">
-                    Don Chorizo
-                </span>
-                <span class="text-[9px] font-semibold tracking-[0.25em] text-gray-400 uppercase mt-1">
-                    PARRILLA
-                </span>
-            </div>
+            <!-- Logo a la izquierda (Gigante, pegado a la izquierda, sin estirar la barra) -->
+            <a href="#" class="relative flex-shrink-0 flex items-center h-12 w-48 justify-start -ml-8">
+                <!-- Se subió de h-28 (112px) a h-[115px] (+3px) y se aplicó filtro café oscuro -->
+                <img src="logo.webp" alt="Don Chorizo" class="absolute h-[115px] w-auto max-w-none object-contain left-0 top-1/2 -translate-y-1/2" style="filter: brightness(0) saturate(100%) invert(18%) sepia(45%) saturate(1025%) hue-rotate(342deg) brightness(91%) contrast(90%);">
+            </a>
             
             <!-- Menú central -->
-            <nav class="flex space-x-6 text-xs font-bold text-gray-700 uppercase tracking-wider">
+            <nav class="flex space-x-6 text-xs font-bold text-gray-700 uppercase tracking-wider pl-4">
                 <a href="#" class="hover:text-[#A61D24] transition">Menú</a>
                 <div class="relative">
                     <button class="hover:text-[#A61D24] transition flex items-center gap-1">
@@ -229,10 +221,9 @@
 
             <!-- CUADRÍCULA DE PRODUCTOS RESPONSIVA -->
             <section class="flex-grow">
-                <!-- Se ajusta de 1 columna en teléfonos pequeños, a 2 en medianos, y a 3 en pantallas grandes -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     
-                    <!-- Tarjeta 1: Chorizo Alemán (Movido de primero) -->
+                    <!-- Tarjeta 1: Chorizo Alemán -->
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
                             <img src="Chorizoaleman.webp" alt="Chorizo Alemán" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
@@ -243,7 +234,7 @@
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Alemán</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 27.000</span>
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
@@ -251,7 +242,7 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 2: Chorizo Antioqueño (Movido al segundo puesto) -->
+                    <!-- Tarjeta 2: Chorizo Antioqueño -->
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
                             <img src="chorizoantioqueño.webp" alt="Chorizo Antioqueño" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
@@ -270,7 +261,7 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 3: Chorizo Santarrosano (Movido al tercer puesto) -->
+                    <!-- Tarjeta 3: Chorizo Santarrosano -->
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
                             <img src="chorizosantarrosano.webp" alt="Chorizo Santarrosano" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
@@ -300,7 +291,7 @@
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Argentino</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 26.500</span>
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
@@ -338,7 +329,7 @@
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Español</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 28.000</span>
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
@@ -357,7 +348,7 @@
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Italiano</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 26.500</span>
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
@@ -376,7 +367,7 @@
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Jalapeño</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.500</span>
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
@@ -403,7 +394,7 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 10: Chorizo Marinero -->
+                    <!-- Tarjeta 10: Chorizo Marinero (Premium a 30.000) -->
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
                             <img src="CHORIZOMARINERO.webp" alt="Chorizo Marinero" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
@@ -414,7 +405,7 @@
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Marinero</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 29.000</span>
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 30.000</span>
                                 <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
@@ -422,7 +413,7 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 11: Chorizo Ahumado (Movido aquí) -->
+                    <!-- Tarjeta 11: Chorizo Ahumado -->
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
                             <img src="CHORIZOAHUMADOS.webp" alt="Chorizo Ahumado" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
@@ -441,7 +432,7 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 12: Chorizo Mixto (Movido al final) -->
+                    <!-- Tarjeta 12: Chorizo Mixto (Premium a 30.000) -->
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
                             <img src="CHORIZOMIXTO.webp" alt="Chorizo Mixto" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
@@ -452,7 +443,7 @@
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Mixto</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
-                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
+                                <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 30.000</span>
                                 <button class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
                                 </button>
