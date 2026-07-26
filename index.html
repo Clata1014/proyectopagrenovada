@@ -1,9 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- ==========================================
+         SEO Y RASTREO DE GOOGLE (Del Código Viejo)
+         ========================================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18032485334"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18032485334');
+    </script>
+
+    <!-- Google Ads Conversion Tracking -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.open(url, '_blank');
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18032485334/jStYCKb2m40cENbHx5ZD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="Bm6ciRRgK6ThzsvTCItp4ifdzl5hHLdqOGXyknB6vA0" />
+
     <title>Don Chorizo - Parrilla</title>
+    
+    <!-- SEO OPTIMIZADO PARA GOOGLE (Con palabras nuevas) -->
+    <meta name="description" content="Chorizos gourmet de alta categoría. 100% pura carne de cerdo, calidad superior y cero pesadez. Precocidos: listos en minutos para AirFryer o sartén. Envíos a toda Colombia.">
+    <!-- Nuevas keywords agregadas aquí: -->
+    <meta name="keywords" content="chorizos premium medellin, chorizo santarrosano, chorizo argentino, sabores principales, chorizo 100 carne de cerdo, chorizo precocido, chorizo airfryer, chorizo gourmet, chorichava, chorizos a domicilio medellin, asados premium">
+    
+    <meta property="og:title" content="Don Chorizo | El Auténtico Chorizo Premium">
+    <meta property="og:description" content="Calidad superior y cero pesadez. Chorizos gourmet precocidos, perfectos para AirFryer o sartén. ¡Pide tu domicilio hoy!">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- DATOS ESTRUCTURADOS SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["WholesaleStore", "OnlineStore"],
+      "name": "Don Chorizo",
+      "telephone": "+573332382326",
+      "url": "https://chorichava.com/",
+      "description": "Fábrica de chorizos premium 100% pura carne de cerdo en Medellín. Especialidad en chorizos gourmet precocidos para AirFryer."
+    }
+    </script>
+
     <!-- Tailwind CSS para diseño responsivo integrado -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fuentes Google Fonts -->
@@ -26,9 +78,34 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+
+        /* Animación para el botón de Instagram (Traída del código viejo) */
+        @keyframes igGlow {
+            0%, 100% { filter: drop-shadow(0 0 4px rgba(225,48,108,0.5)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 10px rgba(225,48,108,0.9)) drop-shadow(0 0 18px rgba(131,58,180,0.4)); transform: scale(1.15); }
+        }
+        .animate-ig-glow { animation: igGlow 2.5s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-[#FDFDFB] text-gray-800 pb-16 md:pb-12">
+
+    <!-- ==========================================
+         MENÚ LATERAL MÓVIL (Hamburguesa)
+         ========================================== -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[100] hidden transition-opacity" onclick="toggleMenu()"></div>
+    <div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full bg-white z-[101] transform -translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+        <div class="flex justify-between items-center p-5 border-b border-gray-100">
+            <span class="font-bold text-[#A61D24] text-xl">Navegación</span>
+            <button onclick="toggleMenu()" class="text-gray-500 text-2xl focus:outline-none"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <nav class="flex flex-col p-6 space-y-6 text-sm font-bold text-gray-700 tracking-wider">
+            <a href="#" class="hover:text-[#A61D24] uppercase">MENÚ</a>
+            <a href="#" class="hover:text-[#A61D24] uppercase">CATEGORÍAS</a>
+            <a href="#" class="hover:text-[#A61D24] uppercase">MODO DE PREPARACIÓN RECETAS</a>
+            <a href="#" class="hover:text-[#A61D24] uppercase">REGISTRO INVIMA</a>
+            <a href="#" class="hover:text-[#A61D24] uppercase">ALIADOS</a>
+        </nav>
+    </div>
 
     <!-- ==========================================
          CABECERA RESPONSIVA (HEADER)
@@ -40,8 +117,8 @@
             
             <!-- Grupo Izquierdo: Hamburguesa + Logo -->
             <div class="flex items-center gap-1">
-                <!-- Botón Menú Hamburguesa -->
-                <button class="text-gray-755 text-2xl focus:outline-none relative z-20">
+                <!-- Botón Menú Hamburguesa conectado con JavaScript -->
+                <button onclick="toggleMenu()" class="text-gray-755 text-2xl focus:outline-none relative z-20">
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 
@@ -51,14 +128,23 @@
                 </a>
             </div>
             
-            <!-- Carrito con indicador negro -->
-            <div class="relative p-1">
-                <button class="text-gray-755 text-2xl focus:outline-none">
-                    <i class="fa-solid fa-basket-shopping"></i>
+            <!-- Grupo Derecho: Instagram + Carrito con indicador negro -->
+            <div class="flex items-center gap-4">
+                
+                <!-- Botón Instagram Animado -->
+                <button onclick="openInstagram()" class="relative flex items-center justify-center w-7 h-7 rounded-full active:scale-95 transition-all animate-ig-glow" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig-nav-mob)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><defs><linearGradient id="ig-nav-mob" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F77737"/><stop offset="50%" stop-color="#E1306C"/><stop offset="100%" stop-color="#833AB4"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="url(#ig-nav-mob)" stroke="none"/></svg>
                 </button>
-                <span class="absolute -top-1 -right-1 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-                    0
-                </span>
+
+                <!-- Carrito original -->
+                <div class="relative p-1">
+                    <button class="text-gray-755 text-2xl focus:outline-none">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </button>
+                    <span class="absolute -top-1 -right-1 bg-black text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
+                        0
+                    </span>
+                </div>
             </div>
         </div>
 
@@ -70,25 +156,26 @@
                 <img src="logo.webp" alt="Don Chorizo" class="absolute h-[155px] w-auto max-w-none object-contain left-0 top-1/2 -translate-y-1/2" style="filter: brightness(0) saturate(100%) invert(18%) sepia(45%) saturate(1025%) hue-rotate(342deg) brightness(91%) contrast(90%);">
             </a>
             
-            <!-- Menú central -->
-            <nav class="flex space-x-6 text-xs font-bold text-gray-700 uppercase tracking-wider pl-4">
-                <a href="#" class="hover:text-[#A61D24] transition">Menú</a>
+            <!-- Menú central (MODIFICADO EN MAYÚSCULAS COMO PEDISTE) -->
+            <nav class="flex space-x-4 lg:space-x-6 text-[10px] lg:text-xs font-bold text-gray-700 uppercase tracking-wider pl-4 items-center">
+                <a href="#" class="hover:text-[#A61D24] transition">MENÚ</a>
                 <div class="relative">
                     <button class="hover:text-[#A61D24] transition flex items-center gap-1">
-                        Categorías <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        CATEGORÍAS <i class="fa-solid fa-chevron-down text-[10px]"></i>
                     </button>
                 </div>
-                <button class="hover:text-[#A61D24] transition flex items-center gap-1">
-                    Puntos de Venta Oficiales <i class="fa-solid fa-chevron-down text-[10px]"></i>
-                </button>
-                <a href="#" class="hover:text-[#A61D24] transition">Blog</a>
-                <a href="#" class="text-red-600 hover:text-red-700 transition flex items-center gap-1">
-                    <i class="fa-solid fa-location-dot"></i> Ciudad
-                </a>
+                <a href="#" class="hover:text-[#A61D24] transition">MODO DE PREPARACIÓN RECETAS</a>
+                <a href="#" class="hover:text-[#A61D24] transition">REGISTRO INVIMA</a>
+                <a href="#" class="hover:text-[#A61D24] transition">ALIADOS</a>
             </nav>
 
             <!-- Íconos a la derecha -->
             <div class="flex items-center space-x-5 text-gray-700">
+                <!-- Botón Instagram Animado -->
+                <button onclick="openInstagram()" class="relative flex items-center justify-center w-8 h-8 rounded-full hover:scale-110 active:scale-95 transition-all animate-ig-glow mr-1" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig-nav-desk)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><defs><linearGradient id="ig-nav-desk" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#F77737"/><stop offset="50%" stop-color="#E1306C"/><stop offset="100%" stop-color="#833AB4"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="url(#ig-nav-desk)" stroke="none"/></svg>
+                </button>
+
                 <button class="hover:text-[#A61D24] text-lg"><i class="fa-solid fa-magnifying-glass"></i></button>
                 
                 <div class="relative">
@@ -112,40 +199,30 @@
     <section class="py-6 bg-white border-b border-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-center text-md md:text-lg font-bold text-gray-800 mb-6 uppercase tracking-wide">
-                Categorías de chorizos y embutidos Don Chorizo
+                Categorías
             </h2>
             
             <!-- Carrusel: Con scroll táctil en móvil y distribuido en escritorio -->
             <div class="flex items-center overflow-x-auto no-scrollbar space-x-6 justify-start md:justify-center py-2">
                 
-                <!-- Tradicionales (Activo) -->
+                <!-- Sabores (Activo) -->
                 <a href="#" class="flex flex-col items-center flex-shrink-0 text-center group">
                     <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-[#A61D24] p-1 transition duration-200 group-hover:scale-105">
-                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=150&auto=format&fit=crop" alt="Tradicionales" class="w-full h-full object-cover rounded-full">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=150&auto=format&fit=crop" alt="Sabores" class="w-full h-full object-cover rounded-full">
                     </div>
                     <span class="text-xs md:text-sm font-bold mt-2 text-gray-900 relative pb-1">
-                        Tradicionales
+                        Sabores
                         <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-[#A61D24]"></span>
                     </span>
                 </a>
 
-                <!-- Gourmet -->
+                <!-- Otras Delicias -->
                 <a href="#" class="flex flex-col items-center flex-shrink-0 text-center group">
                     <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border border-transparent p-1 transition duration-200 group-hover:scale-105">
-                        <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=150&auto=format&fit=crop" alt="Gourmet" class="w-full h-full object-cover rounded-full">
+                        <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=150&auto=format&fit=crop" alt="Otras Delicias" class="w-full h-full object-cover rounded-full">
                     </div>
                     <span class="text-xs md:text-sm font-medium mt-2 text-gray-500 group-hover:text-gray-900">
-                        Gourmet
-                    </span>
-                </a>
-
-                <!-- Combos -->
-                <a href="#" class="flex flex-col items-center flex-shrink-0 text-center group">
-                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border border-transparent p-1 transition duration-200 group-hover:scale-105">
-                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=150&auto=format&fit=crop" alt="Combos" class="w-full h-full object-cover rounded-full">
-                    </div>
-                    <span class="text-xs md:text-sm font-medium mt-2 text-gray-500 group-hover:text-gray-900">
-                        Combos
+                        Otras Delicias
                     </span>
                 </a>
 
@@ -156,6 +233,16 @@
                     </div>
                     <span class="text-xs md:text-sm font-medium mt-2 text-gray-500 group-hover:text-gray-900">
                         Acompañantes
+                    </span>
+                </a>
+
+                <!-- Combos -->
+                <a href="#" class="flex flex-col items-center flex-shrink-0 text-center group">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border border-transparent p-1 transition duration-200 group-hover:scale-105">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=150&auto=format&fit=crop" alt="Combos" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <span class="text-xs md:text-sm font-medium mt-2 text-gray-500 group-hover:text-gray-900">
+                        Combos
                     </span>
                 </a>
 
@@ -209,13 +296,13 @@
                         <li class="flex items-center justify-between">
                             <label class="flex items-center gap-3 cursor-pointer">
                                 <input type="radio" name="filtro-cat" class="text-[#A61D24] focus:ring-[#A61D24] h-4.5 w-4.5">
-                                <span>Tradicionales (6)</span>
+                                <span>Sabores (6)</span>
                             </label>
                         </li>
                         <li class="flex items-center justify-between">
                             <label class="flex items-center gap-3 cursor-pointer">
                                 <input type="radio" name="filtro-cat" class="text-[#A61D24] focus:ring-[#A61D24] h-4.5 w-4.5">
-                                <span>Gourmet (6)</span>
+                                <span>Otras Delicias (6)</span>
                             </label>
                         </li>
                     </ul>
@@ -233,7 +320,7 @@
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Alemán</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -252,7 +339,7 @@
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Antioqueño</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -271,7 +358,7 @@
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Santarrosano</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -290,7 +377,7 @@
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Argentino</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -309,7 +396,7 @@
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo de Chicharrón</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -328,7 +415,7 @@
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Español</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -347,7 +434,7 @@
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Italiano</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -366,7 +453,7 @@
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Jalapeño</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -385,7 +472,7 @@
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Llanero</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -397,14 +484,14 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 10: Chorizo Marinero (Premium a 30.000) -->
+                    <!-- Tarjeta 10: Chorizo Marinero -->
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
                             <img src="CHORIZOMARINERO.webp" alt="Chorizo Marinero" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Gourmet</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Marinero</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -423,7 +510,7 @@
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Ahumado</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -435,14 +522,15 @@
                         </div>
                     </div>
 
-                    <!-- Tarjeta 12: Chorizo Mixto (Premium a 30.000) -->
+                    <!-- Tarjeta 12: Chorizo Mixto (SIN ANIMACIÓN DE HOVER) -->
                     <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="CHORIZOMIXTO.webp" alt="Chorizo Mixto" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <!-- AQUÍ SE ELIMINARON LAS CLASES DE ANIMACIÓN COMO PEDISTE -->
+                            <img src="CHORIZOMIXTO.webp" alt="Chorizo Mixto" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
-                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Tradicionales</p>
+                                <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Mixto</h3>
                             </div>
                             <div class="flex items-center justify-between mt-4">
@@ -488,11 +576,48 @@
     </div>
 
     <!-- ==========================================
-         BOTÓN FLOTANTE WHATSAPP
+         BOTÓN FLOTANTE WHATSAPP (Con número viejo y tracking SEO)
          ========================================== -->
-    <a href="https://wa.me/573000000000" target="_blank" class="fixed bottom-20 md:bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300 z-50 animate-bounce" aria-label="WhatsApp">
+    <a href="#" onclick="return gtag_report_conversion('https://wa.me/573332382326?text=Hola%20Don%20Chorizo!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos.')" class="fixed bottom-20 md:bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition duration-300 z-50 animate-bounce" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
+    <!-- SCRIPT PARA EL MENÚ MÓVIL Y EL BOTÓN DE INSTAGRAM -->
+    <script>
+        // Lógica del menú hamburguesa en celular
+        function toggleMenu() {
+            const overlay = document.getElementById('mobile-menu-overlay');
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('-translate-x-full')) {
+                menu.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+            } else {
+                menu.classList.add('-translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+
+        // Lógica del botón de Instagram (Traído de tu código viejo)
+        function openInstagram() {
+            const username = 'chorichava';
+            const webUrl = 'https://www.instagram.com/' + username + '/';
+            const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+            if (!isMobile) {
+                window.open(webUrl, '_blank');
+                return;
+            }
+
+            const deepLink = 'instagram://user?username=' + username;
+            const start = Date.now();
+            window.location.href = deepLink;
+
+            setTimeout(function () {
+                if (Date.now() - start < 1600) {
+                    window.location.href = webUrl;
+                }
+            }, 800);
+        }
+    </script>
 </body>
 </html>
