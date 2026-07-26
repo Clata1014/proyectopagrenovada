@@ -37,16 +37,19 @@
         
         <!-- VISTA MÓVIL (Se oculta en computadoras: md:hidden) -->
         <div class="flex items-center justify-between px-4 py-3 md:hidden">
-            <!-- Botón Menú Hamburguesa -->
-            <button class="text-gray-755 text-2xl focus:outline-none">
-                <i class="fa-solid fa-bars"></i>
-            </button>
             
-            <!-- Logo Centrado en Móvil (Grande sin estirar la barra) -->
-            <a href="#" class="relative flex justify-center items-center h-10 w-40">
-                <!-- Se ajustó a h-[119px] (+4px) para celular -->
-                <img src="logo.webp" alt="Don Chorizo" class="absolute h-[119px] w-auto max-w-none object-contain top-1/2 -translate-y-1/2" style="filter: brightness(0) saturate(100%) invert(18%) sepia(45%) saturate(1025%) hue-rotate(342deg) brightness(91%) contrast(90%);">
-            </a>
+            <!-- Grupo Izquierdo: Hamburguesa + Logo -->
+            <div class="flex items-center gap-3">
+                <!-- Botón Menú Hamburguesa -->
+                <button class="text-gray-755 text-2xl focus:outline-none relative z-20">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                
+                <!-- Logo alineado a la izquierda (Aumentado a 124px) -->
+                <a href="#" class="relative flex justify-start items-center h-10 w-32">
+                    <img src="logo.webp" alt="Don Chorizo" class="absolute left-0 h-[124px] w-auto max-w-none object-contain top-1/2 -translate-y-1/2" style="filter: brightness(0) saturate(100%) invert(18%) sepia(45%) saturate(1025%) hue-rotate(342deg) brightness(91%) contrast(90%);">
+                </a>
+            </div>
             
             <!-- Carrito con indicador negro -->
             <div class="relative p-1">
