@@ -58,7 +58,7 @@
     <link rel="icon" type="image/webp" href="./favicon.webp">
     <link rel="apple-touch-icon" href="./favicon.webp">
 
-    <!-- DATOS ESTRUCTURADOS JSON-LD COMPLETOS (Local + Catálogo + Estrellas + FAQ) -->
+    <!-- DATOS ESTRUCTURADOS JSON-LD COMPLETOS -->
     <script type="application/ld+json">
     [
       {
@@ -107,86 +107,6 @@
         "paymentAccepted": "Efectivo, Transferencia, Nequi",
         "sameAs": [
           "https://www.instagram.com/chorichava/"
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Catálogo de Chorizos Premium y Gourmet",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Chorizo Santarrosano Gourmet",
-                "category": "Chorizos Gourmet",
-                "description": "El auténtico chorizo santarrosano en versión premium, ideal para asados y parrilleros.",
-                "brand": { "@type": "Brand", "name": "ChoriChava" },
-                "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "124" }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Chorizo Antioqueño Gourmet",
-                "category": "Chorizos Gourmet",
-                "description": "Chorizo antioqueño paisa 100% pura carne de cerdo precocido.",
-                "brand": { "@type": "Brand", "name": "ChoriChava" },
-                "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "98" }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Chorizo Jalapeño",
-                "category": "Chorizos Gourmet",
-                "description": "Chorizo picante jalapeño gourmet para parrilla.",
-                "brand": { "@type": "Brand", "name": "ChoriChava" },
-                "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "85" }
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Chicharrón Gourmet",
-                "category": "Otras Delicias",
-                "description": "Chicharrón gourmet precocido especial carnudo y crujiente.",
-                "brand": { "@type": "Brand", "name": "ChoriChava" },
-                "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "156" }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "¿Dónde comprar el mejor chorizo santarrosano en Medellín?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "En ChoriChava fabricamos el auténtico chorizo santarrosano premium en Medellín. Hacemos domicilios en toda la ciudad y el Área Metropolitana."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Los chorizos vienen listos para la parrilla o AirFryer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "¡Totalmente! Todos nuestros chorizos premium (Santarrosano, Antioqueño, Argentino) son 100% precocidos, pura carne de cerdo y tienen cero merma. Ideales para el verdadero parrillero o para calentar 5 minutos en AirFryer."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Venden chorizos al por mayor para negocios?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sí, ofrecemos precios de fábrica directos para asaderos, restaurantes y negocios de comidas rápidas en todo Colombia."
-            }
-          }
         ]
       }
     ]
@@ -199,12 +119,32 @@
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#A61D24',
+                            gold: '#C5A02F',
+                            dark: '#0F0F0F'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
-        .logo-font { font-family: 'Playfair Display', Georgia, serif; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+        /* Cinta superior */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -222,15 +162,20 @@
             100% { transform: translateX(-50%); }
         }
 
+        /* Instagram Glow */
         @keyframes igGlow {
             0%, 100% { filter: drop-shadow(0 0 5px rgba(225,48,108,0.6)); transform: scale(1); }
             50% { filter: drop-shadow(0 0 12px rgba(225,48,108,0.9)) drop-shadow(0 0 20px rgba(131,58,180,0.5)); transform: scale(1.1); }
         }
         .animate-ig-glow { animation: igGlow 2.5s ease-in-out infinite; }
         
+        /* Animaciones */
         .slide-in-right { animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
         
+        .animate-bounce-slow { animation: bounce 3s infinite; }
+        
+        /* Toast Notification */
         #toast-container { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%); z-index: 9999; pointer-events: none; }
         .toast {
             background: #1A1A1A; color: #FFF; padding: 12px 24px; border-radius: 50px;
@@ -239,19 +184,41 @@
             transition: all 0.4s ease;
         }
         .toast.show { opacity: 1; transform: translateY(0) scale(1); }
+
+        /* Estilos Tarjetas Flip (Para el Footer de Reconocimientos) */
+        .flip-card { perspective: 1000px; }
+        .flip-card-inner {
+            position: relative; width: 100%; height: 100%; text-align: center;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d;
+            animation: autoFlip 8s infinite ease-in-out;
+        }
+        @keyframes autoFlip {
+            0%, 45% { transform: rotateY(0deg); }
+            50%, 95% { transform: rotateY(180deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%;
+            -webkit-backface-visibility: hidden; backface-visibility: hidden;
+            border-radius: 1rem; display: flex; align-items: center; justify-content: center; flex-direction: column;
+            background: #FFF; border: 1px solid rgba(197, 160, 47, 0.2); 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+        .flip-card-front { background: transparent; border: none; box-shadow: none;}
+        .flip-card-back { transform: rotateY(180deg); padding: 4px; }
         
-        /* LA MAGIA: H1 Invisible y Textos SEO Invisibles para no dañar tu diseño */
-        .sr-only { 
-            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; 
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px 0 rgba(74, 14, 14, 0.05);
         }
     </style>
 </head>
 <body class="bg-[#FDFDFB] text-gray-800 pb-16 md:pb-0">
 
-    <!-- EL H1 INVISIBLE (LO PRIMERO QUE LEE GOOGLE) -->
-    <h1 class="sr-only">Fábrica de Chorizos Premium en Medellín: Comprar Chorizo Santarrosano, Antioqueño, Jalapeño y Chicharrón para Asados | ChoriChava</h1>
-
-    <!-- CINTA SUPERIOR EN MOVIMIENTO -->
+    <!-- CINTA SUPERIOR EN MOVIMIENTO (Letra Blanca) -->
     <div class="bg-[#0F0F0F] text-[10px] md:text-xs py-2 font-bold tracking-[0.2em] uppercase border-b border-[#C5A02F]/30 relative z-50 marquee-container shadow-sm">
         <div class="marquee-content items-center gap-12 md:gap-20 text-white">
             <span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Medellín</span>
@@ -440,7 +407,6 @@
                 </div>
             </aside>
 
-            <!-- CUADRÍCULA DE PRODUCTOS -->
             <section class="flex-grow" aria-label="Lista de productos">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     
@@ -653,7 +619,7 @@
                         </div>
                     </article>
 
-                    <!-- Tarjeta 12: Chorizo Mixto -->
+                    <!-- Tarjeta 12: Chorizo Mixto (SIN ANIMACIÓN DE ZOOM) -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
                             <img src="CHORIZOMIXTO.webp" alt="Chorizo Mixto Combinación Gourmet" title="Chorizo Mixto" loading="lazy" width="400" height="300" class="w-full h-full object-cover">
@@ -678,53 +644,134 @@
         </div>
         
         <!-- ==========================================
-             EL TEXTO SEO OCULTO (INVISIBILIZADO DE NUEVO COMO PEDISTE)
+             SECCIÓN DE TESTIMONIOS (Rescatada del código viejo)
              ========================================== -->
-        <div class="sr-only">
-            <h2>Fábrica de Chorizos al Por Mayor en Medellín — ChoriChava</h2>
-            <p>ChoriChava es una fábrica de chorizos premium y carnes ahumadas ubicada en Medellín, Antioquia. Somos proveedores de embutidos para restaurantes, asaderos, food trucks y negocios de comida en toda la región. Nuestros chorizos precocidos de cero merma no botan agua, lo que garantiza alta rentabilidad como chorizo para la parrilla y una experiencia superior en cada porción. Ofrecemos precios de fábrica directos, sin intermediarios, tanto al por mayor como al detal. El mejor chorizo santarrosano, chorizo antioqueño, chorizo jalapeño, chorizo alemán, y chorizo argentino para verdaderos parrilleros.</p>
+        <section class="mt-16 pt-10 pb-12 glass-panel rounded-[2rem] px-6 text-center relative group">
+            <i class="fa-solid fa-quote-right text-4xl text-[#C5A02F]/30 mx-auto mb-4 block"></i>
+            <h2 class="text-3xl md:text-4xl font-serif font-black text-brand-red mb-10">Clientes <span class="italic text-[#C5A02F]">Felices</span></h2>
             
-            <h2>Comprar Chorizos Premium a Domicilio en Medellín y envíos a todo Colombia</h2>
-            <p>¿Buscas chorizos artesanales 100% pura carne de cerdo para tus asados familiares? En ChoriChava elaboramos chorizos gourmet listos en 5 minutos para Airfryer, sartén o para el experto parrillero. Perfectos para reuniones, fiestas y cualquier ocasión especial. Descubre nuestro auténtico chorizo santarrosano, el jugoso chorizo argentino, el chorizo alemán y todos mis sabores disponibles. Hacemos envíos a domicilio en Medellín y el Área Metropolitana del Valle de Aburrá. También despachamos pedidos al por mayor a todo Antioquia y envíos nacionales a toda Colombia.</p>
+            <div class="flex overflow-x-auto gap-6 snap-x pb-8 no-scrollbar px-2 relative z-10">
+                <div class="min-w-[280px] bg-white p-8 rounded-3xl shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] snap-center flex flex-col justify-center border border-gray-50">
+                    <div class="flex gap-1 justify-center mb-4 text-[#C5A02F]">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed font-medium">"El sabor ahumado es increíble. Se nota la calidad de verdad y son perfectos para el asado."</p>
+                    <p class="font-bold text-[#A61D24] text-xs uppercase tracking-widest opacity-80">Carlos M.</p>
+                </div>
+                <div class="min-w-[280px] bg-white p-8 rounded-3xl shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] snap-center flex flex-col justify-center border border-gray-50">
+                    <div class="flex gap-1 justify-center mb-4 text-[#C5A02F]">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed font-medium">"Compré el paquete de Chorizo Santarrosano y todos quedaron encantados en la parrilla. Repetiré."</p>
+                    <p class="font-bold text-[#A61D24] text-xs uppercase tracking-widest opacity-80">Juliana R.</p>
+                </div>
+                <div class="min-w-[280px] bg-white p-8 rounded-3xl shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] snap-center flex flex-col justify-center border border-gray-50">
+                    <div class="flex gap-1 justify-center mb-4 text-[#C5A02F]">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed font-medium">"El jalapeño tiene el picante exacto. Los metí a la Airfryer y no botaron nada de agua."</p>
+                    <p class="font-bold text-[#A61D24] text-xs uppercase tracking-widest opacity-80">Mateo G.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TEXTO SEO VISIBLE, LIMPIO Y ELEGANTE
+             (Con estructura semántica perfecta para Googlebot)
+             ========================================== -->
+        <div class="mt-12 mb-8 bg-white p-8 md:p-10 rounded-2xl border border-gray-100 shadow-sm text-[12px] md:text-sm text-gray-600 font-medium leading-relaxed">
+            <h2 class="font-bold text-gray-800 text-base md:text-lg mb-3 uppercase tracking-widest border-b border-gray-100 pb-2">Fábrica de Chorizos al Por Mayor en Medellín — ChoriChava</h2>
+            <p class="mb-6">ChoriChava es una fábrica de chorizos premium y carnes ahumadas ubicada en Medellín, Antioquia. Somos proveedores de embutidos para restaurantes, asaderos, food trucks y negocios de comida en toda la región. Nuestros chorizos precocidos de cero merma no botan agua, lo que garantiza alta rentabilidad como <strong>chorizo para la parrilla</strong> y una experiencia superior en cada porción. Ofrecemos precios de fábrica directos, sin intermediarios, tanto al por mayor como al detal. El mejor <strong>chorizo santarrosano</strong>, <strong>chorizo antioqueño</strong>, <strong>chorizo jalapeño</strong>, <strong>chorizo alemán</strong>, y <strong>chorizo argentino</strong> para verdaderos parrilleros.</p>
             
-            <h2>Catálogo Completo de Productos ChoriChava</h2>
-            <ul>
-                <li>Chorizo Santarrosano — Tradición de Santa Rosa de Cabal en versión premium</li>
-                <li>Chorizo Antioqueño — El clásico chorizo paisa en versión gourmet</li>
-                <li>Chorizo Jalapeño — Chorizo picante con jalapeño para amantes del sabor intenso</li>
-                <li>Chicharrón Gourmet — Chicharrón crujiente premium para asados y picadas</li>
-                <li>Chorizo Argentino — Chorizo estilo argentino 100% carne de cerdo</li>
-                <li>Chorizo Alemán — Estilo bratwurst para hot dogs gourmet y parrilladas</li>
-                <li>Chorizo Ahumado — Chorizo ahumado artesanal con sabor intenso</li>
-                <li>Chorizo Español — Chorizo con pimentón ahumado estilo ibérico</li>
-                <li>Chorizo Marinero — Chorizo con toques de mariscos para parrilla</li>
-                <li>Chorizo Llanero — Sabor auténtico de los llanos colombianos</li>
-                <li>Chorizo Mixto — Combinación de carnes selectas con sabor único</li>
-                <li>Carnes Ahumadas — Bondiola, Cañón, Papada, Panceta y Pernil</li>
+            <h2 class="font-bold text-gray-800 text-base md:text-lg mb-3 uppercase tracking-widest border-b border-gray-100 pb-2">Comprar Chorizos Premium a Domicilio en Medellín y envíos a todo Colombia</h2>
+            <p class="mb-6">¿Buscas chorizos artesanales 100% pura carne de cerdo para tus asados familiares? En ChoriChava elaboramos chorizos gourmet listos en 5 minutos para Airfryer, sartén o para el experto <strong>parrillero</strong>. Perfectos para reuniones, fiestas y cualquier ocasión especial. Descubre nuestro auténtico <strong>chorizo santarrosano</strong>, el jugoso chorizo argentino, el chorizo alemán y todos mis sabores disponibles. Hacemos envíos a domicilio en Medellín y el Área Metropolitana del Valle de Aburrá. También despachamos pedidos al por mayor a todo Antioquia y envíos nacionales a toda Colombia.</p>
+            
+            <h2 class="font-bold text-gray-800 text-base md:text-lg mb-3 uppercase tracking-widest border-b border-gray-100 pb-2">Catálogo Completo de Productos ChoriChava</h2>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 list-disc pl-5 mt-2 mb-4">
+                <li><strong>Chorizo Santarrosano</strong> — Tradición de Santa Rosa de Cabal en versión premium</li>
+                <li><strong>Chorizo Antioqueño</strong> — El clásico chorizo paisa en versión gourmet</li>
+                <li><strong>Chorizo Jalapeño</strong> — Chorizo picante con jalapeño para amantes del sabor intenso</li>
+                <li><strong>Chicharrón Gourmet</strong> — Chicharrón crujiente premium para asados y picadas</li>
+                <li><strong>Chorizo Argentino</strong> — Chorizo estilo argentino 100% carne de cerdo</li>
+                <li><strong>Chorizo Alemán</strong> — Estilo bratwurst para hot dogs gourmet y parrilladas</li>
+                <li><strong>Chorizo Ahumado</strong> — Chorizo ahumado artesanal con sabor intenso</li>
+                <li><strong>Chorizo Español</strong> — Chorizo con pimentón ahumado estilo ibérico</li>
+                <li><strong>Chorizo Marinero</strong> — Chorizo con toques de mariscos para parrilla</li>
+                <li><strong>Chorizo Llanero</strong> — Sabor auténtico de los llanos colombianos</li>
+                <li><strong>Chorizo Mixto</strong> — Combinación de carnes selectas con sabor único</li>
+                <li><strong>Carnes Ahumadas</strong> — Bondiola, Cañón, Papada, Panceta y Pernil</li>
             </ul>
         </div>
 
     </main>
 
-    <!-- FOOTER LOCAL Y NAP -->
-    <footer class="bg-white border-t border-gray-100 py-8 mb-[60px] md:mb-0">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-            <div>
-                <span class="font-bold text-gray-800 text-sm block mb-1">ChoriChava Premium</span>
-                Fábrica de Chorizos y Carnes Ahumadas.
+    <!-- ==========================================
+         FOOTER DE RECONOCIMIENTOS (Rescatado del código viejo)
+         ========================================== -->
+    <footer class="bg-white border-t border-gray-100 pt-10 pb-8 mb-[60px] md:mb-0 text-center relative z-10">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="flex justify-center mb-6">
+                <img src="logo.webp" alt="ChoriChava Logo" class="h-40 w-auto object-contain" style="filter: brightness(0) saturate(100%) invert(18%) sepia(45%) saturate(1025%) hue-rotate(342deg) brightness(91%) contrast(90%);">
             </div>
-            <div class="flex flex-col md:flex-row gap-4 md:gap-8 font-medium">
-                <span class="flex items-center justify-center gap-1.5"><i class="fa-solid fa-location-dot text-[#A61D24]" aria-hidden="true"></i> Medellín, Antioquia (Colombia)</span>
-                <span class="flex items-center justify-center gap-1.5"><i class="fa-brands fa-whatsapp text-green-500" aria-hidden="true"></i> +57 333 238 2326</span>
-                <span class="flex items-center justify-center gap-1.5"><i class="fa-regular fa-clock text-gray-400" aria-hidden="true"></i> Lunes a Sábado (8am - 6pm)</span>
+            
+            <div class="mb-8">
+                <p class="text-[10px] md:text-xs font-bold text-[#A61D24]/70 uppercase tracking-[0.2em] mb-4">Reconocimientos y Tradición</p>
+                <div class="flex flex-row justify-center gap-6 md:gap-10">
+                     <!-- Tarjeta 1: Producto Local -->
+                     <div class="flip-card w-20 h-20 md:w-24 md:h-24">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="https://em-content.zobj.net/source/apple/391/flag-colombia_1f1e8-1f1f4.png" alt="Colombia" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Producto</span>
+                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Local</span>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Tarjeta 2: Tulio Recomienda -->
+                     <div class="flip-card w-20 h-20 md:w-24 md:h-24">
+                        <div class="flip-card-inner" style="animation-delay: 0.2s;">
+                            <div class="flip-card-front">
+                                <img src="https://github.com/Clata1014/chorichava7/blob/main/Tuliorecomienda.png?raw=true" alt="Tulio Recomienda" class="w-14 h-14 md:w-20 md:h-20 object-contain">
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Tulio</span>
+                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Recomienda</span>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Tarjeta 3: Mercados Campesinos -->
+                     <div class="flip-card w-20 h-20 md:w-24 md:h-24">
+                        <div class="flip-card-inner" style="animation-delay: 0.4s;">
+                            <div class="flip-card-front">
+                                <img src="https://em-content.zobj.net/source/apple/391/farmer_1f9d1-200d-1f33e.png" alt="Campesino" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                            </div>
+                            <div class="flip-card-back">
+                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Mercados</span>
+                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Campesinos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="text-gray-400">
-                &copy; 2024 ChoriChava. Todos los derechos reservados.
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-xs text-gray-500 font-medium border-t border-gray-100 pt-6">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-[#A61D24]"></i> Medellín, Antioquia (Colombia)</span>
+                <span class="hidden md:inline text-gray-300">|</span>
+                <span class="flex items-center gap-1.5"><i class="fa-brands fa-whatsapp text-green-500"></i> +57 333 238 2326</span>
+                <span class="hidden md:inline text-gray-300">|</span>
+                <a href="https://www.instagram.com/chorichava/" target="_blank" class="flex items-center gap-1.5 hover:text-[#A61D24] transition">
+                    <i class="fa-brands fa-instagram text-[#E1306C]"></i> @chorichava
+                </a>
             </div>
+            <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-6">&copy; 2024 ChoriChava Premium. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- MENÚ DE NAVEGACIÓN INFERIOR (Solo Celular) -->
+    <!-- ==========================================
+         MENÚ DE NAVEGACIÓN INFERIOR (Solo Celular)
+         ========================================== -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around py-2.5 z-40 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
         <a href="#" aria-label="Inicio" class="flex flex-col items-center text-[#A61D24]" onclick="window.scrollTo(0,0)">
             <i class="fa-solid fa-house text-lg"></i>
