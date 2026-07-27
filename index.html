@@ -42,7 +42,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Bm6ciRRgK6ThzsvTCItp4ifdzl5hHLdqOGXyknB6vA0" />
 
-    <!-- TÍTULO Y METADATOS SEO (Súper optimizados para Santarrosano y Parrilla) -->
+    <!-- TÍTULO Y METADATOS SEO -->
     <title>Chorizo Santarrosano, Antioqueño y Chorizos Premium en Medellín | ChoriChava</title>
     <meta name="description" content="Fábrica de chorizos premium. El mejor chorizo santarrosano, antioqueño, jalapeño y chicharrón. 100% pura carne de cerdo para parrilla, Airfryer o sartén.">
     <meta name="keywords" content="chorizo santarrosano, chorizo antioqueño, chorizo jalapeño, chicharron, chorizos premium medellin, chorizo para la parrilla, parrillero, chorizo aleman, chorizo argentino, chorizo 100 carne de cerdo, chorizo precocido, chorichava, asados premium">
@@ -76,38 +76,7 @@
           "addressLocality": "Medellín",
           "addressRegion": "Antioquia",
           "addressCountry": "CO"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "6.2442",
-          "longitude": "-75.5812"
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-            "opens": "08:00",
-            "closes": "18:00"
-          }
-        ],
-        "areaServed": [
-          {
-            "@type": "City",
-            "name": "Medellín",
-            "containedInPlace": { "@type": "AdministrativeArea", "name": "Antioquia" }
-          },
-          {
-            "@type": "AdministrativeArea",
-            "name": "Antioquia",
-            "containedInPlace": { "@type": "Country", "name": "Colombia" }
-          }
-        ],
-        "priceRange": "$$",
-        "currenciesAccepted": "COP",
-        "paymentAccepted": "Efectivo, Transferencia, Nequi",
-        "sameAs": [
-          "https://www.instagram.com/chorichava/"
-        ]
+        }
       }
     ]
     </script>
@@ -119,63 +88,29 @@
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            red: '#A61D24',
-                            gold: '#C5A02F',
-                            dark: '#0F0F0F'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        .logo-font { font-family: 'Playfair Display', Georgia, serif; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Cinta superior */
         .marquee-container {
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-            width: 100%;
-            display: flex;
-            align-items: center;
+            overflow: hidden; white-space: nowrap; position: relative; width: 100%; display: flex; align-items: center;
         }
         .marquee-content {
-            display: inline-flex;
-            animation: scroll-left 30s linear infinite;
+            display: inline-flex; animation: scroll-left 30s linear infinite;
         }
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+        @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* Instagram Glow */
         @keyframes igGlow {
             0%, 100% { filter: drop-shadow(0 0 5px rgba(225,48,108,0.6)); transform: scale(1); }
             50% { filter: drop-shadow(0 0 12px rgba(225,48,108,0.9)) drop-shadow(0 0 20px rgba(131,58,180,0.5)); transform: scale(1.1); }
         }
         .animate-ig-glow { animation: igGlow 2.5s ease-in-out infinite; }
         
-        /* Animaciones */
         .slide-in-right { animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         @keyframes slideInRight { from { transform: translateX(100%); } to { transform: translateX(0); } }
         
-        .animate-bounce-slow { animation: bounce 3s infinite; }
-        
-        /* Toast Notification */
         #toast-container { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%); z-index: 9999; pointer-events: none; }
         .toast {
             background: #1A1A1A; color: #FFF; padding: 12px 24px; border-radius: 50px;
@@ -185,7 +120,14 @@
         }
         .toast.show { opacity: 1; transform: translateY(0) scale(1); }
 
-        /* Estilos Tarjetas Flip (Para el Footer de Reconocimientos) */
+        /* H1 Invisible (Correcto y Legal para SEO) */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+
+        /* Ocultar flecha del acordeón por defecto */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+
+        /* Animaciones para las tarjetas giratorias (Reconocimientos) */
         .flip-card { perspective: 1000px; }
         .flip-card-inner {
             position: relative; width: 100%; height: 100%; text-align: center;
@@ -200,27 +142,24 @@
         .flip-card-front, .flip-card-back {
             position: absolute; width: 100%; height: 100%;
             -webkit-backface-visibility: hidden; backface-visibility: hidden;
-            border-radius: 1rem; display: flex; align-items: center; justify-content: center; flex-direction: column;
-            background: #FFF; border: 1px solid rgba(197, 160, 47, 0.2); 
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-radius: 1.5rem; display: flex; align-items: center; justify-content: center; flex-direction: column;
         }
-        .flip-card-front { background: transparent; border: none; box-shadow: none;}
-        .flip-card-back { transform: rotateY(180deg); padding: 4px; }
-        
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 8px 32px 0 rgba(74, 14, 14, 0.05);
+        .flip-card-front { background: transparent; }
+        .flip-card-back {
+            transform: rotateY(180deg); padding: 4px; background: #FFF;
+            border: 1px solid rgba(166, 29, 36, 0.15); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
-<body class="bg-[#FDFDFB] text-gray-800 pb-16 md:pb-0">
+<body class="bg-[#FDFDFB] text-gray-800 pb-[70px] md:pb-0">
 
-    <!-- CINTA SUPERIOR EN MOVIMIENTO (Letra Blanca) -->
-    <div class="bg-[#0F0F0F] text-[10px] md:text-xs py-2 font-bold tracking-[0.2em] uppercase border-b border-[#C5A02F]/30 relative z-50 marquee-container shadow-sm">
-        <div class="marquee-content items-center gap-12 md:gap-20 text-white">
+    <!-- EL H1 INVISIBLE (LO PRIMERO QUE LEE GOOGLE - 100% Legal) -->
+    <h1 class="sr-only">Fábrica de Chorizos Premium en Medellín: Comprar Chorizo Santarrosano, Antioqueño, Jalapeño y Chicharrón para Asados | ChoriChava</h1>
+
+    <!-- CINTA SUPERIOR EN MOVIMIENTO -->
+    <div class="bg-[#0F0F0F] text-[10px] md:text-xs py-2 font-bold tracking-[0.2em] uppercase border-b border-[#C5A02F]/30 relative z-50 marquee-container shadow-sm text-white">
+        <div class="marquee-content items-center gap-12 md:gap-20">
             <span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Medellín</span>
             <span class="text-white/40">|</span>
             <span class="flex items-center gap-2 whitespace-nowrap"><i class="fa-solid fa-truck" aria-hidden="true"></i> Envíos a todo Colombia</span>
@@ -246,7 +185,7 @@
     <!-- MENÚ LATERAL MÓVIL (Hamburguesa) -->
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/50 z-[100] hidden transition-opacity" onclick="toggleMobileMenu()" aria-hidden="true"></div>
     <nav id="mobile-menu" aria-label="Menú principal móvil" class="fixed top-0 left-0 w-64 h-full bg-white shadow-2xl z-[101] transform -translate-x-full transition-transform duration-300 flex flex-col">
-        <div class="flex justify-between items-center p-5 border-b border-gray-100">
+        <div class="flex justify-between items-center p-4 border-b border-gray-100">
             <span class="font-bold text-[#A61D24] text-xl">Menú</span>
             <button onclick="toggleMobileMenu()" aria-label="Cerrar menú" class="text-gray-500 text-2xl focus:outline-none">
                 <i class="fa-solid fa-xmark"></i>
@@ -327,7 +266,7 @@
     </header>
 
     <!-- CARRUSEL DE CATEGORÍAS -->
-    <section class="pt-5 pb-3 bg-white border-b border-gray-50">
+    <section class="pt-4 pb-2 bg-white border-b border-gray-50">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-center text-md md:text-lg font-bold text-gray-800 mb-3 uppercase tracking-wide">Categorías</h2>
             <div class="flex items-center overflow-x-auto no-scrollbar space-x-6 justify-start md:justify-center py-1">
@@ -356,7 +295,7 @@
     </section>
 
     <!-- TIENDA PRINCIPAL -->
-    <main class="max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-8">
+    <main class="max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-4">
         
         <div class="block md:hidden mb-4">
             <div class="flex justify-between items-baseline">
@@ -407,13 +346,14 @@
                 </div>
             </aside>
 
+            <!-- CUADRÍCULA DE PRODUCTOS -->
             <section class="flex-grow" aria-label="Lista de productos">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     
                     <!-- Tarjeta 1: Chorizo Alemán -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="Chorizoaleman.webp" alt="Comprar Chorizo Alemán Premium en Medellín" loading="lazy" width="400" height="300" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <img src="Chorizoaleman.webp" alt="Comprar Chorizo Alemán Premium en Medellín" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -432,7 +372,7 @@
                     <!-- Tarjeta 2: Chorizo Antioqueño -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="chorizoantioqueño.webp" alt="Chorizo Antioqueño Gourmet 100% Carne de Cerdo" loading="lazy" width="400" height="300" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <img src="chorizoantioqueño.webp" alt="Chorizo Antioqueño Gourmet 100% Carne de Cerdo" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -451,7 +391,7 @@
                     <!-- Tarjeta 3: Chorizo Santarrosano -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="chorizosantarrosano.webp" alt="Auténtico Chorizo Santarrosano Premium para asados" loading="lazy" width="400" height="300" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <img src="chorizosantarrosano.webp" alt="Auténtico Chorizo Santarrosano Premium para asados" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -470,7 +410,7 @@
                     <!-- Tarjeta 4: Chorizo Argentino -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="CHORIZOARGENTINO.webp" alt="Chorizo Argentino para Parrilla 100% Cerdo" loading="lazy" width="400" height="300" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <img src="CHORIZOARGENTINO.webp" alt="Chorizo Argentino para Parrilla 100% Cerdo" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -489,7 +429,7 @@
                     <!-- Tarjeta 5: Chorizo de Chicharrón -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="chorizochicharron.webp" alt="Chorizo de Chicharrón Crujiente y Carnudo" loading="lazy" width="400" height="300" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <img src="chorizochicharron.webp" alt="Chorizo de Chicharrón Crujiente y Carnudo" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -508,7 +448,7 @@
                     <!-- Tarjeta 6: Chorizo Español -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="chorizoespañol.webp" alt="Chorizo Español Gourmet con Pimentón" loading="lazy" width="400" height="300" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <img src="chorizoespañol.webp" alt="Chorizo Español Gourmet con Pimentón" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -527,7 +467,7 @@
                     <!-- Tarjeta 7: Chorizo Italiano -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="CHORIZOITALIANO.webp" alt="Chorizo Italiano Artesanal Precocido" loading="lazy" width="400" height="300" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <img src="CHORIZOITALIANO.webp" alt="Chorizo Italiano Artesanal Precocido" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -546,7 +486,7 @@
                     <!-- Tarjeta 8: Chorizo Jalapeño -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="CHORIZOJALAPEÑO.webp" alt="Chorizo Jalapeño Picante Especial para Asados" loading="lazy" width="400" height="300" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <img src="CHORIZOJALAPEÑO.webp" alt="Chorizo Jalapeño Picante Especial para Asados" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -565,7 +505,7 @@
                     <!-- Tarjeta 9: Chorizo Llanero -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="CHORIZOLLANERO.webp" alt="Auténtico Chorizo Llanero Colombiano Gourmet" loading="lazy" width="400" height="300" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <img src="CHORIZOLLANERO.webp" alt="Auténtico Chorizo Llanero Colombiano Gourmet" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -584,7 +524,7 @@
                     <!-- Tarjeta 10: Chorizo Marinero -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="CHORIZOMARINERO.webp" alt="Chorizo Marinero Gourmet con Mariscos" loading="lazy" width="400" height="300" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <img src="CHORIZOMARINERO.webp" alt="Chorizo Marinero Gourmet con Mariscos" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -603,7 +543,7 @@
                     <!-- Tarjeta 11: Chorizo Ahumado -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="CHORIZOAHUMADOS.webp" alt="Chorizo Ahumado Artesanal y Premium" loading="lazy" width="400" height="300" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                            <img src="CHORIZOAHUMADOS.webp" alt="Chorizo Ahumado Artesanal y Premium" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -619,10 +559,10 @@
                         </div>
                     </article>
 
-                    <!-- Tarjeta 12: Chorizo Mixto (SIN ANIMACIÓN DE ZOOM) -->
+                    <!-- Tarjeta 12: Chorizo Mixto -->
                     <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col">
                         <div class="w-full aspect-[4/3] overflow-hidden relative bg-gray-50">
-                            <img src="CHORIZOMIXTO.webp" alt="Chorizo Mixto Combinación Gourmet" title="Chorizo Mixto" loading="lazy" width="400" height="300" class="w-full h-full object-cover">
+                            <img src="CHORIZOMIXTO.webp" alt="Chorizo Mixto Combinación Gourmet" title="Chorizo Mixto" loading="lazy" class="w-full h-full object-cover">
                         </div>
                         <div class="p-4 border-t border-gray-50 flex-grow flex flex-col justify-between">
                             <div>
@@ -640,138 +580,161 @@
 
                 </div>
             </section>
-
         </div>
-        
+
         <!-- ==========================================
-             SECCIÓN DE TESTIMONIOS (Rescatada del código viejo)
+             NUEVA SECCIÓN: TESTIMONIOS (LLENA PANTALLA PC, BOTONES EN MÓVIL)
              ========================================== -->
-        <section class="mt-16 pt-10 pb-12 glass-panel rounded-[2rem] px-6 text-center relative group">
-            <i class="fa-solid fa-quote-right text-4xl text-[#C5A02F]/30 mx-auto mb-4 block"></i>
-            <h2 class="text-3xl md:text-4xl font-serif font-black text-brand-red mb-10">Clientes <span class="italic text-[#C5A02F]">Felices</span></h2>
+        <section class="mt-12 pt-8 border-t border-gray-100 text-center relative max-w-7xl mx-auto">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6 uppercase tracking-wide">Clientes Felices</h2>
             
-            <div class="flex overflow-x-auto gap-6 snap-x pb-8 no-scrollbar px-2 relative z-10">
-                <div class="min-w-[280px] bg-white p-8 rounded-3xl shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] snap-center flex flex-col justify-center border border-gray-50">
-                    <div class="flex gap-1 justify-center mb-4 text-[#C5A02F]">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <!-- Botones de navegación (Solo visibles en Celular) -->
+            <div class="flex justify-center gap-4 mb-4 md:hidden">
+                <button onclick="scrollTestimonials(-1)" class="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-500 shadow-sm hover:text-[#A61D24] active:scale-95 transition-all"><i class="fa-solid fa-chevron-left"></i></button>
+                <button onclick="scrollTestimonials(1)" class="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-500 shadow-sm hover:text-[#A61D24] active:scale-95 transition-all"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Contenedor: En Móvil es un carrusel, en PC es una cuadrícula de 4 que llena la pantalla -->
+            <div id="testimonials-container" class="flex overflow-x-auto md:grid md:grid-cols-4 gap-6 snap-x pb-4 no-scrollbar px-2 scroll-smooth items-stretch">
+                <!-- Testimonio 1 -->
+                <div class="min-w-[280px] md:min-w-0 bg-white p-6 rounded-3xl shadow-sm border border-gray-100 snap-center flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-center mb-3 text-yellow-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-gray-600 italic mb-4 text-center">"El sabor ahumado es increíble. Se nota la calidad de verdad, no botan nada de agua en el asador."</p>
                     </div>
-                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed font-medium">"El sabor ahumado es increíble. Se nota la calidad de verdad y son perfectos para el asado."</p>
-                    <p class="font-bold text-[#A61D24] text-xs uppercase tracking-widest opacity-80">Carlos M.</p>
+                    <p class="font-bold text-[#A61D24] text-xs uppercase tracking-widest text-center">Carlos M.</p>
                 </div>
-                <div class="min-w-[280px] bg-white p-8 rounded-3xl shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] snap-center flex flex-col justify-center border border-gray-50">
-                    <div class="flex gap-1 justify-center mb-4 text-[#C5A02F]">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <!-- Testimonio 2 -->
+                <div class="min-w-[280px] md:min-w-0 bg-white p-6 rounded-3xl shadow-sm border border-gray-100 snap-center flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-center mb-3 text-yellow-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-gray-600 italic mb-4 text-center">"Compré el paquete surtido y todos quedaron encantados. Los meto a la Airfryer y quedan crujientes."</p>
                     </div>
-                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed font-medium">"Compré el paquete de Chorizo Santarrosano y todos quedaron encantados en la parrilla. Repetiré."</p>
-                    <p class="font-bold text-[#A61D24] text-xs uppercase tracking-widest opacity-80">Juliana R.</p>
+                    <p class="font-bold text-[#A61D24] text-xs uppercase tracking-widest text-center">Juliana R.</p>
                 </div>
-                <div class="min-w-[280px] bg-white p-8 rounded-3xl shadow-[0_10px_30px_-5px_rgba(0,0,0,0.05)] snap-center flex flex-col justify-center border border-gray-50">
-                    <div class="flex gap-1 justify-center mb-4 text-[#C5A02F]">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                <!-- Testimonio 3 -->
+                <div class="min-w-[280px] md:min-w-0 bg-white p-6 rounded-3xl shadow-sm border border-gray-100 snap-center flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-center mb-3 text-yellow-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-gray-600 italic mb-4 text-center">"El Santarrosano es el mejor que he probado en Medellín. Directo a la freidora de aire y listo."</p>
                     </div>
-                    <p class="text-sm text-gray-600 italic mb-6 leading-relaxed font-medium">"El jalapeño tiene el picante exacto. Los metí a la Airfryer y no botaron nada de agua."</p>
-                    <p class="font-bold text-[#A61D24] text-xs uppercase tracking-widest opacity-80">Mateo G.</p>
+                    <p class="font-bold text-[#A61D24] text-xs uppercase tracking-widest text-center">Andrés V.</p>
+                </div>
+                <!-- Testimonio 4 -->
+                <div class="min-w-[280px] md:min-w-0 bg-white p-6 rounded-3xl shadow-sm border border-gray-100 snap-center flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-center mb-3 text-yellow-400 text-sm">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-gray-600 italic mb-4 text-center">"Llegó el pedido rapidísimo. La calidad de la carne se nota, cero grasosos y un sabor espectacular."</p>
+                    </div>
+                    <p class="font-bold text-[#A61D24] text-xs uppercase tracking-widest text-center">María P.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================
-             TEXTO SEO VISIBLE, LIMPIO Y ELEGANTE
-             (Con estructura semántica perfecta para Googlebot)
-             ========================================== -->
-        <div class="mt-12 mb-8 bg-white p-8 md:p-10 rounded-2xl border border-gray-100 shadow-sm text-[12px] md:text-sm text-gray-600 font-medium leading-relaxed">
-            <h2 class="font-bold text-gray-800 text-base md:text-lg mb-3 uppercase tracking-widest border-b border-gray-100 pb-2">Fábrica de Chorizos al Por Mayor en Medellín — ChoriChava</h2>
-            <p class="mb-6">ChoriChava es una fábrica de chorizos premium y carnes ahumadas ubicada en Medellín, Antioquia. Somos proveedores de embutidos para restaurantes, asaderos, food trucks y negocios de comida en toda la región. Nuestros chorizos precocidos de cero merma no botan agua, lo que garantiza alta rentabilidad como <strong>chorizo para la parrilla</strong> y una experiencia superior en cada porción. Ofrecemos precios de fábrica directos, sin intermediarios, tanto al por mayor como al detal. El mejor <strong>chorizo santarrosano</strong>, <strong>chorizo antioqueño</strong>, <strong>chorizo jalapeño</strong>, <strong>chorizo alemán</strong>, y <strong>chorizo argentino</strong> para verdaderos parrilleros.</p>
-            
-            <h2 class="font-bold text-gray-800 text-base md:text-lg mb-3 uppercase tracking-widest border-b border-gray-100 pb-2">Comprar Chorizos Premium a Domicilio en Medellín y envíos a todo Colombia</h2>
-            <p class="mb-6">¿Buscas chorizos artesanales 100% pura carne de cerdo para tus asados familiares? En ChoriChava elaboramos chorizos gourmet listos en 5 minutos para Airfryer, sartén o para el experto <strong>parrillero</strong>. Perfectos para reuniones, fiestas y cualquier ocasión especial. Descubre nuestro auténtico <strong>chorizo santarrosano</strong>, el jugoso chorizo argentino, el chorizo alemán y todos mis sabores disponibles. Hacemos envíos a domicilio en Medellín y el Área Metropolitana del Valle de Aburrá. También despachamos pedidos al por mayor a todo Antioquia y envíos nacionales a toda Colombia.</p>
-            
-            <h2 class="font-bold text-gray-800 text-base md:text-lg mb-3 uppercase tracking-widest border-b border-gray-100 pb-2">Catálogo Completo de Productos ChoriChava</h2>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 list-disc pl-5 mt-2 mb-4">
-                <li><strong>Chorizo Santarrosano</strong> — Tradición de Santa Rosa de Cabal en versión premium</li>
-                <li><strong>Chorizo Antioqueño</strong> — El clásico chorizo paisa en versión gourmet</li>
-                <li><strong>Chorizo Jalapeño</strong> — Chorizo picante con jalapeño para amantes del sabor intenso</li>
-                <li><strong>Chicharrón Gourmet</strong> — Chicharrón crujiente premium para asados y picadas</li>
-                <li><strong>Chorizo Argentino</strong> — Chorizo estilo argentino 100% carne de cerdo</li>
-                <li><strong>Chorizo Alemán</strong> — Estilo bratwurst para hot dogs gourmet y parrilladas</li>
-                <li><strong>Chorizo Ahumado</strong> — Chorizo ahumado artesanal con sabor intenso</li>
-                <li><strong>Chorizo Español</strong> — Chorizo con pimentón ahumado estilo ibérico</li>
-                <li><strong>Chorizo Marinero</strong> — Chorizo con toques de mariscos para parrilla</li>
-                <li><strong>Chorizo Llanero</strong> — Sabor auténtico de los llanos colombianos</li>
-                <li><strong>Chorizo Mixto</strong> — Combinación de carnes selectas con sabor único</li>
-                <li><strong>Carnes Ahumadas</strong> — Bondiola, Cañón, Papada, Panceta y Pernil</li>
-            </ul>
-        </div>
-
-    </main>
-
-    <!-- ==========================================
-         FOOTER DE RECONOCIMIENTOS (Rescatado del código viejo)
-         ========================================== -->
-    <footer class="bg-white border-t border-gray-100 pt-10 pb-8 mb-[60px] md:mb-0 text-center relative z-10">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="flex justify-center mb-6">
-                <img src="logo.webp" alt="ChoriChava Logo" class="h-40 w-auto object-contain" style="filter: brightness(0) saturate(100%) invert(18%) sepia(45%) saturate(1025%) hue-rotate(342deg) brightness(91%) contrast(90%);">
-            </div>
-            
-            <div class="mb-8">
-                <p class="text-[10px] md:text-xs font-bold text-[#A61D24]/70 uppercase tracking-[0.2em] mb-4">Reconocimientos y Tradición</p>
+        <!-- RECONOCIMIENTOS (Flip Cards) Espacios reducidos y Título NEGRITA OSCURO -->
+        <section class="bg-gray-50 py-6 rounded-3xl mt-6 border border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <!-- TÍTULO TOTALMENTE EN NEGRITA Y OSCURO -->
+                <h3 class="text-[13px] md:text-sm font-black text-gray-800 uppercase tracking-[0.15em] mb-6">Reconocimientos de Calidad</h3>
                 <div class="flex flex-row justify-center gap-6 md:gap-10">
-                     <!-- Tarjeta 1: Producto Local -->
-                     <div class="flip-card w-20 h-20 md:w-24 md:h-24">
+                    <div class="flip-card w-16 h-16 md:w-20 md:h-20">
                         <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="https://em-content.zobj.net/source/apple/391/flag-colombia_1f1e8-1f1f4.png" alt="Colombia" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                            <div class="flip-card-front bg-white border border-gray-100 shadow-sm">
+                                <img src="https://em-content.zobj.net/source/apple/391/flag-colombia_1f1e8-1f1f4.png" class="w-8 h-8 md:w-10 md:h-10 object-contain" alt="Producto Colombiano">
                             </div>
-                            <div class="flip-card-back">
-                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Producto</span>
-                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Local</span>
+                            <div class="flip-card-back bg-white">
+                                <span class="font-bold text-[8px] md:text-[9px] uppercase text-[#A61D24]">Producto<br>Local</span>
                             </div>
                         </div>
                     </div>
-                     <!-- Tarjeta 2: Tulio Recomienda -->
-                     <div class="flip-card w-20 h-20 md:w-24 md:h-24">
+                    <div class="flip-card w-16 h-16 md:w-20 md:h-20">
                         <div class="flip-card-inner" style="animation-delay: 0.2s;">
-                            <div class="flip-card-front">
-                                <img src="https://github.com/Clata1014/chorichava7/blob/main/Tuliorecomienda.png?raw=true" alt="Tulio Recomienda" class="w-14 h-14 md:w-20 md:h-20 object-contain">
+                            <div class="flip-card-front bg-white border border-gray-100 shadow-sm">
+                                <img src="https://github.com/Clata1014/chorichava7/blob/main/Tuliorecomienda.png?raw=true" class="w-10 h-10 md:w-12 md:h-12 object-contain" alt="Tulio Recomienda">
                             </div>
-                            <div class="flip-card-back">
-                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Tulio</span>
-                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Recomienda</span>
+                            <div class="flip-card-back bg-white">
+                                <span class="font-bold text-[8px] md:text-[9px] uppercase text-[#A61D24]">Tulio<br>Recomienda</span>
                             </div>
                         </div>
                     </div>
-                     <!-- Tarjeta 3: Mercados Campesinos -->
-                     <div class="flip-card w-20 h-20 md:w-24 md:h-24">
+                    <div class="flip-card w-16 h-16 md:w-20 md:h-20">
                         <div class="flip-card-inner" style="animation-delay: 0.4s;">
-                            <div class="flip-card-front">
-                                <img src="https://em-content.zobj.net/source/apple/391/farmer_1f9d1-200d-1f33e.png" alt="Campesino" class="w-12 h-12 md:w-16 md:h-16 object-contain">
+                            <div class="flip-card-front bg-white border border-gray-100 shadow-sm">
+                                <img src="https://em-content.zobj.net/source/apple/391/farmer_1f9d1-200d-1f33e.png" class="w-8 h-8 md:w-10 md:h-10 object-contain" alt="Mercados Campesinos">
                             </div>
-                            <div class="flip-card-back">
-                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Mercados</span>
-                                <span class="font-bold text-[9px] md:text-[11px] uppercase text-[#A61D24]">Campesinos</span>
+                            <div class="flip-card-back bg-white">
+                                <span class="font-bold text-[8px] md:text-[9px] uppercase text-[#A61D24]">Mercados<br>Campesinos</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="flex flex-col md:flex-row justify-center items-center gap-4 text-xs text-gray-500 font-medium border-t border-gray-100 pt-6">
-                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-[#A61D24]"></i> Medellín, Antioquia (Colombia)</span>
-                <span class="hidden md:inline text-gray-300">|</span>
-                <span class="flex items-center gap-1.5"><i class="fa-brands fa-whatsapp text-green-500"></i> +57 333 238 2326</span>
-                <span class="hidden md:inline text-gray-300">|</span>
-                <a href="https://www.instagram.com/chorichava/" target="_blank" class="flex items-center gap-1.5 hover:text-[#A61D24] transition">
-                    <i class="fa-brands fa-instagram text-[#E1306C]"></i> @chorichava
-                </a>
+        <!-- TEXTO SEO LEGAL (ACORDEÓN CASI INVISIBLE A SIMPLE VISTA PERO TOTALMENTE LEGAL) -->
+        <section class="max-w-4xl mx-auto px-2 pb-2 mt-4">
+            <details class="group cursor-pointer">
+                <summary class="flex justify-center items-center font-medium p-2 text-gray-300 hover:text-gray-400 transition-colors text-[10px] md:text-[11px] outline-none">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-info"></i> Información legal, envíos y catálogo ChoriChava</span>
+                    <span class="transition group-open:rotate-180 ml-2">
+                        <i class="fa-solid fa-chevron-down text-[8px]"></i>
+                    </span>
+                </summary>
+                <div class="p-5 mt-2 border border-gray-100 rounded-xl text-[11px] md:text-xs text-gray-500 space-y-4 bg-white shadow-sm cursor-text text-left">
+                    <h2 class="font-bold text-gray-800 uppercase">Fábrica de Chorizos al Por Mayor en Medellín — ChoriChava</h2>
+                    <p>ChoriChava es una fábrica de chorizos premium y carnes ahumadas ubicada en Medellín, Antioquia. Somos proveedores de embutidos para restaurantes, asaderos, food trucks y negocios de comida en toda la región. Nuestros chorizos precocidos de cero merma no botan agua, lo que garantiza alta rentabilidad como chorizo para la parrilla y una experiencia superior en cada porción. Ofrecemos precios de fábrica directos, sin intermediarios, tanto al por mayor como al detal. El mejor chorizo santarrosano, chorizo antioqueño, chorizo jalapeño, chorizo alemán, y chorizo argentino para verdaderos parrilleros.</p>
+                    
+                    <h2 class="font-bold text-gray-800 uppercase mt-4">Comprar Chorizos Premium a Domicilio en Medellín</h2>
+                    <p>¿Buscas chorizos artesanales 100% pura carne de cerdo para tus asados familiares? En ChoriChava elaboramos chorizos gourmet listos en 5 minutos para Airfryer, sartén o para el experto parrillero. Perfectos para reuniones, fiestas y cualquier ocasión especial. Descubre nuestro auténtico chorizo santarrosano, el jugoso chorizo argentino, el chorizo alemán y todos mis sabores disponibles. Hacemos envíos a domicilio en Medellín y el Área Metropolitana del Valle de Aburrá. También despachamos pedidos al por mayor a todo Antioquia y envíos nacionales a toda Colombia.</p>
+                    
+                    <h2 class="font-bold text-gray-800 uppercase mt-4">Catálogo Completo</h2>
+                    <ul class="list-disc list-inside grid grid-cols-1 sm:grid-cols-2 gap-1 text-gray-500">
+                        <li><strong>Chorizo Santarrosano:</strong> Tradición de Santa Rosa de Cabal</li>
+                        <li><strong>Chorizo Antioqueño:</strong> El clásico chorizo paisa</li>
+                        <li><strong>Chorizo Jalapeño:</strong> Picante para amantes del sabor</li>
+                        <li><strong>Chicharrón Gourmet:</strong> Crujiente premium</li>
+                        <li><strong>Chorizo Argentino:</strong> 100% carne de cerdo</li>
+                        <li><strong>Chorizo Alemán:</strong> Estilo bratwurst</li>
+                        <li><strong>Chorizo Ahumado:</strong> Artesanal con sabor intenso</li>
+                        <li><strong>Chorizo Español:</strong> Con pimentón ahumado</li>
+                        <li><strong>Chorizo Marinero:</strong> Con toques de mariscos</li>
+                        <li><strong>Chorizo Llanero:</strong> Auténtico de los llanos</li>
+                        <li><strong>Chorizo Mixto:</strong> Combinación de carnes selectas</li>
+                        <li><strong>Carnes Ahumadas:</strong> Bondiola, Cañón, Papada</li>
+                    </ul>
+                </div>
+            </details>
+        </section>
+
+    </main>
+
+    <!-- FOOTER LOCAL Y NAP -->
+    <footer class="bg-white border-t border-gray-100 py-8 mb-[60px] md:mb-0 relative z-30">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+            <div>
+                <span class="font-bold text-gray-800 text-sm block mb-1">ChoriChava Premium</span>
+                Fábrica de Chorizos y Carnes Ahumadas.
             </div>
-            <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-6">&copy; 2024 ChoriChava Premium. Todos los derechos reservados.</p>
+            <div class="flex flex-col md:flex-row gap-4 md:gap-8 font-medium">
+                <span class="flex items-center justify-center gap-1.5"><i class="fa-solid fa-location-dot text-[#A61D24]" aria-hidden="true"></i> Medellín, Antioquia (Colombia)</span>
+                <span class="flex items-center justify-center gap-1.5"><i class="fa-brands fa-whatsapp text-green-500" aria-hidden="true"></i> +57 333 238 2326</span>
+                <span class="flex items-center justify-center gap-1.5"><i class="fa-regular fa-clock text-gray-400" aria-hidden="true"></i> Lunes a Sábado (8am - 6pm)</span>
+            </div>
+            <div class="text-gray-400">
+                &copy; 2024 ChoriChava. Todos los derechos reservados.
+            </div>
         </div>
     </footer>
 
-    <!-- ==========================================
-         MENÚ DE NAVEGACIÓN INFERIOR (Solo Celular)
-         ========================================== -->
+    <!-- MENÚ DE NAVEGACIÓN INFERIOR (Solo Celular) -->
     <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex justify-around py-2.5 z-40 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
         <a href="#" aria-label="Inicio" class="flex flex-col items-center text-[#A61D24]" onclick="window.scrollTo(0,0)">
             <i class="fa-solid fa-house text-lg"></i>
@@ -849,6 +812,13 @@
             const start = Date.now();
             window.location.href = deepLink;
             setTimeout(function () { if (Date.now() - start < 1600) window.location.href = webUrl; }, 800);
+        }
+
+        // Función para mover los testimonios en el celular
+        function scrollTestimonials(direction) {
+            const container = document.getElementById('testimonials-container');
+            const scrollAmount = 300; 
+            container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
         }
 
         const PRODUCTS = [
