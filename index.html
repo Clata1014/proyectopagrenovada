@@ -84,7 +84,7 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fuentes Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -295,7 +295,7 @@
     </section>
 
     <!-- TIENDA PRINCIPAL -->
-    <main class="max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-4">
+    <main class="max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-1">
         
         <div class="block md:hidden mb-4">
             <div class="flex justify-between items-baseline">
@@ -359,8 +359,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Alemán</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p1')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button onclick="addToCart('p1')" aria-label="Agregar Chorizo Alemán al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -378,8 +383,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Antioqueño</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p2')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button onclick="addToCart('p2')" aria-label="Agregar Chorizo Antioqueño al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -397,8 +407,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Santarrosano</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p3')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button onclick="addToCart('p3')" aria-label="Agregar Chorizo Santarrosano al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -416,8 +431,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Argentino</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p4')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button onclick="addToCart('p4')" aria-label="Agregar Chorizo Argentino al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -435,8 +455,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo de Chicharrón</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p5')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button onclick="addToCart('p5')" aria-label="Agregar Chorizo de Chicharrón al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -454,8 +479,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Español</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p6')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button onclick="addToCart('p6')" aria-label="Agregar Chorizo Español al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -473,8 +503,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Italiano</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p7')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button onclick="addToCart('p7')" aria-label="Agregar Chorizo Italiano al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -492,8 +527,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Jalapeño</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p8')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button onclick="addToCart('p8')" aria-label="Agregar Chorizo Jalapeño al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -511,8 +551,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Llanero</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p9')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button onclick="addToCart('p9')" aria-label="Agregar Chorizo Llanero al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -530,8 +575,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Otras Delicias</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Marinero</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p10')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 30.000</span>
                                 <button onclick="addToCart('p10')" aria-label="Agregar Chorizo Marinero al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -549,8 +599,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Ahumado</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p11')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 25.000</span>
                                 <button onclick="addToCart('p11')" aria-label="Agregar Chorizo Ahumado al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -568,8 +623,13 @@
                             <div>
                                 <p class="text-[10px] text-amber-700 font-bold uppercase tracking-wider">Sabores</p>
                                 <h3 class="font-bold text-gray-800 text-sm md:text-base mt-1 line-clamp-2">Chorizo Mixto</h3>
+                                
+                                <!-- BOTÓN DE INGREDIENTES GIGANTE Y VISIBLE -->
+                                <button onclick="openIngredientsModal('p12')" class="mt-4 w-full bg-gray-100 border border-gray-200 hover:bg-gray-200 text-gray-900 text-[13px] md:text-sm font-extrabold py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 uppercase tracking-wide">
+                                    <i class="fa-solid fa-list-check text-[#A61D24]"></i> Ver Ingredientes
+                                </button>
                             </div>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-5">
                                 <span class="text-base md:text-lg font-bold text-[#A61D24]">$ 30.000</span>
                                 <button onclick="addToCart('p12')" aria-label="Agregar Chorizo Mixto al carrito" class="bg-[#A61D24] hover:bg-red-800 text-white text-[11px] font-bold px-3.5 py-2 rounded-lg transition duration-200">
                                     Agregar
@@ -583,10 +643,36 @@
         </div>
 
         <!-- ==========================================
-             NUEVA SECCIÓN: TESTIMONIOS (LLENA PANTALLA PC, BOTONES EN MÓVIL)
+             NUEVO: BANNER INSTAGRAM (IDÉNTICO A LA FOTO)
              ========================================== -->
-        <section class="mt-12 pt-8 border-t border-gray-100 text-center relative max-w-7xl mx-auto">
-            <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6 uppercase tracking-wide">Clientes Felices</h2>
+        <section class="max-w-7xl mx-auto px-4 mt-10 mb-8">
+            <div class="rounded-[2.5rem] p-10 md:p-16 text-center shadow-lg relative overflow-hidden" style="background: linear-gradient(135deg, #A824A1 0%, #EA2A5F 50%, #FC7B37 100%);">
+                <!-- Etiqueta de Seguidores -->
+                <div class="mx-auto flex items-center justify-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-4 py-1.5 mb-6 text-[10px] md:text-xs font-bold uppercase tracking-widest text-white w-fit shadow-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#25D366] shadow-[0_0_8px_#25D366]"></span> +4.900 SEGUIDORES
+                </div>
+                
+                <!-- Título (Fuente Serif) -->
+                <h2 class="logo-font text-3xl md:text-5xl lg:text-[3.5rem] text-white font-bold leading-tight mb-5 drop-shadow-md">
+                    Casi <span style="color: #CDA12F;">5.000</span> amantes del<br class="hidden md:block"> buen chorizo no pueden<br class="hidden md:block"> estar equivocados
+                </h2>
+                
+                <!-- Párrafo -->
+                <p class="text-white/95 text-sm md:text-lg max-w-2xl mx-auto font-medium mb-10 leading-relaxed drop-shadow-sm font-sans">
+                    Asados en vivo, detrás de cámaras, recetas exclusivas y<br class="hidden md:block"> promociones que solo encuentras en nuestro Instagram.
+                </p>
+                
+                <!-- Botón -->
+                <a href="https://www.instagram.com/chorichava/" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white text-gray-900 font-extrabold text-[11px] md:text-sm tracking-widest px-8 py-4 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.2)] hover:scale-105 active:scale-95 transition-transform uppercase font-sans">
+                    📸 SEGUIR A @CHORICHAVA <i class="fa-solid fa-arrow-right text-gray-500"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: TESTIMONIOS (MÁS PEGADA Y CON TÍTULO IGUAL A CATEGORÍAS) -->
+        <section class="mt-6 pt-6 border-t border-gray-100 text-center relative max-w-7xl mx-auto">
+            <!-- Título modificado para que sea idéntico al de "Categorías" -->
+            <h2 class="text-center text-md md:text-lg font-bold text-gray-800 mb-6 uppercase tracking-wide">Clientes Felices</h2>
             
             <!-- Botones de navegación (Solo visibles en Celular) -->
             <div class="flex justify-center gap-4 mb-4 md:hidden">
@@ -594,7 +680,6 @@
                 <button onclick="scrollTestimonials(1)" class="w-10 h-10 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-500 shadow-sm hover:text-[#A61D24] active:scale-95 transition-all"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
 
-            <!-- Contenedor: En Móvil es un carrusel, en PC es una cuadrícula de 4 que llena la pantalla -->
             <div id="testimonials-container" class="flex overflow-x-auto md:grid md:grid-cols-4 gap-6 snap-x pb-4 no-scrollbar px-2 scroll-smooth items-stretch">
                 <!-- Testimonio 1 -->
                 <div class="min-w-[280px] md:min-w-0 bg-white p-6 rounded-3xl shadow-sm border border-gray-100 snap-center flex flex-col justify-between">
@@ -640,10 +725,10 @@
         </section>
 
         <!-- RECONOCIMIENTOS (Flip Cards) Espacios reducidos y Título NEGRITA OSCURO -->
-        <section class="bg-gray-50 py-6 rounded-3xl mt-6 border border-gray-100">
+        <section class="bg-gray-50 py-4 rounded-3xl mt-4 border border-gray-100">
             <div class="max-w-7xl mx-auto px-4 text-center">
                 <!-- TÍTULO TOTALMENTE EN NEGRITA Y OSCURO -->
-                <h3 class="text-[13px] md:text-sm font-black text-gray-800 uppercase tracking-[0.15em] mb-6">Reconocimientos de Calidad</h3>
+                <h3 class="text-[13px] md:text-sm font-black text-gray-800 uppercase tracking-[0.15em] mb-4">Reconocimientos de Calidad</h3>
                 <div class="flex flex-row justify-center gap-6 md:gap-10">
                     <div class="flip-card w-16 h-16 md:w-20 md:h-20">
                         <div class="flip-card-inner">
@@ -680,7 +765,7 @@
         </section>
 
         <!-- TEXTO SEO LEGAL (ACORDEÓN CASI INVISIBLE A SIMPLE VISTA PERO TOTALMENTE LEGAL) -->
-        <section class="max-w-4xl mx-auto px-2 pb-2 mt-4">
+        <section class="max-w-4xl mx-auto px-2 pb-0 mt-1">
             <details class="group cursor-pointer">
                 <summary class="flex justify-center items-center font-medium p-2 text-gray-300 hover:text-gray-400 transition-colors text-[10px] md:text-[11px] outline-none">
                     <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-info"></i> Información legal, envíos y catálogo ChoriChava</span>
@@ -716,19 +801,19 @@
 
     </main>
 
-    <!-- FOOTER LOCAL Y NAP -->
-    <footer class="bg-white border-t border-gray-100 py-8 mb-[60px] md:mb-0 relative z-30">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+    <!-- FOOTER LOCAL Y NAP CON LETRAS MÁS OSCURAS Y NEGRITA -->
+    <footer class="bg-white border-t border-gray-100 py-4 mb-[60px] md:mb-0 relative z-30 mt-2">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] md:text-xs text-gray-800">
             <div>
                 <span class="font-bold text-gray-800 text-sm block mb-1">ChoriChava Premium</span>
-                Fábrica de Chorizos y Carnes Ahumadas.
+                <span class="font-bold">Fábrica de Chorizos y Carnes Ahumadas.</span>
             </div>
-            <div class="flex flex-col md:flex-row gap-4 md:gap-8 font-medium">
+            <div class="flex flex-col md:flex-row gap-4 md:gap-8 font-bold text-gray-800">
                 <span class="flex items-center justify-center gap-1.5"><i class="fa-solid fa-location-dot text-[#A61D24]" aria-hidden="true"></i> Medellín, Antioquia (Colombia)</span>
                 <span class="flex items-center justify-center gap-1.5"><i class="fa-brands fa-whatsapp text-green-500" aria-hidden="true"></i> +57 333 238 2326</span>
-                <span class="flex items-center justify-center gap-1.5"><i class="fa-regular fa-clock text-gray-400" aria-hidden="true"></i> Lunes a Sábado (8am - 6pm)</span>
+                <span class="flex items-center justify-center gap-1.5"><i class="fa-solid fa-clock text-gray-700" aria-hidden="true"></i> Lunes a Sábado (8am - 6pm)</span>
             </div>
-            <div class="text-gray-400">
+            <div class="text-gray-600 font-bold">
                 &copy; 2024 ChoriChava. Todos los derechos reservados.
             </div>
         </div>
@@ -764,6 +849,39 @@
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
+    <!-- ======================================================= -->
+    <!-- NUEVO: MODAL DE INGREDIENTES                            -->
+    <!-- ======================================================= -->
+    <div id="ingredients-modal" class="fixed inset-0 z-[120] hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="closeIngredientsModal()"></div>
+        <div class="relative bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden flex flex-col transform scale-95 transition-transform duration-300" id="ingredients-box">
+            <div class="flex justify-between items-center p-5 border-b border-gray-100 bg-gray-50">
+                <h3 class="font-black text-lg text-[#A61D24] uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-list-check"></i> Ficha Técnica
+                </h3>
+                <button onclick="closeIngredientsModal()" class="text-gray-400 hover:text-gray-600 text-2xl w-8 h-8 flex justify-center items-center rounded-full hover:bg-gray-200 transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 overflow-y-auto max-h-[70vh]">
+                <div class="flex items-center gap-4 mb-5">
+                    <img id="modal-img" src="" alt="Producto" class="w-24 h-24 object-cover rounded-xl border border-gray-100 shadow-sm" onerror="this.style.display='none'">
+                    <div>
+                        <h4 id="modal-product-name" class="font-bold text-gray-900 text-xl leading-tight"></h4>
+                        <span class="text-lg font-bold text-[#A61D24] block mt-1" id="modal-price"></span>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 text-sm text-gray-700 leading-relaxed font-medium shadow-inner" id="modal-desc" style="white-space: pre-line;">
+                </div>
+            </div>
+            <div class="p-5 border-t border-gray-100 bg-white">
+                <button id="modal-add-btn" class="w-full bg-[#A61D24] text-white font-bold py-4 rounded-xl uppercase tracking-widest text-[13px] hover:bg-red-800 transition-colors shadow-md flex justify-center items-center gap-2">
+                    Agregar al Pedido <i class="fa-solid fa-basket-shopping"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- MODAL DEL CARRITO LATERAL -->
     <div id="cart-sidebar" class="fixed inset-0 z-[100] flex justify-end hidden" aria-modal="true" role="dialog" aria-labelledby="cart-title">
         <div class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity" onclick="toggleCart()" aria-hidden="true"></div>
@@ -789,7 +907,6 @@
         </div>
     </div>
 
-    <!-- LÓGICA JAVASCRIPT MATEMÁTICA Y FUNCIONAL -->
     <script>
         function toggleMobileMenu() {
             const overlay = document.getElementById('mobile-menu-overlay');
@@ -814,7 +931,6 @@
             setTimeout(function () { if (Date.now() - start < 1600) window.location.href = webUrl; }, 800);
         }
 
-        // Función para mover los testimonios en el celular
         function scrollTestimonials(direction) {
             const container = document.getElementById('testimonials-container');
             const scrollAmount = 300; 
@@ -835,6 +951,59 @@
             { id: "p11", name: "Chorizo Ahumado", price: 25000, image: "CHORIZOAHUMADOS.webp" },
             { id: "p12", name: "Chorizo Mixto", price: 30000, image: "CHORIZOMIXTO.webp" }
         ];
+
+        // ==========================================
+        // INYECCIÓN: LÓGICA DEL MODAL DE INGREDIENTES
+        // ==========================================
+        const INGREDIENTS_DATA = {
+            "p1": "Ingredientes: Carne de cerdo, tocino, mostaza, mejorana, oregano, humo liquido, fosfato (regulador de pH), eritorbato de sodio (antioxidante), sal, nitrito de sodio fiador de color\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g",
+            "p2": "Ingredientes: Carne de cerdo, tocino, agua, cebolla de rama, comino, pimentón, ajo, ají y sal.\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g",
+            "p3": "Ingredientes: Carne de cerdo, tocino, ajo, cebolla de rama, comino, humo y sal.\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g",
+            "p4": "Ingredientes: Carne de cerdo, tocino, vino tinto, sal, nuez moscada, hinojo, orégano y perejil.\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g",
+            "p5": "Ingredientes: Chicharrón gourmet precocido, carne de cerdo, papada, cebolla, ajo, comino, ají y pimentón.\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g",
+            "p6": "Ingredientes: Carne de cerdo, tocino, ajo, comino, orégano, paprika, sal y vino blanco.\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g",
+            "p7": "Ingredientes: Mezcla tradicional de cerdo con hierbas italianas, hinojo y especias selectas.\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g",
+            "p8": "Ingredientes: Carne de cerdo, tocino, ajo, pimienta negra, jalapeño y cebolla en polvo.\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g",
+            "p9": "Ingredientes: Carne de cerdo, tocino, paprika, comino, cilantro, cebolla, ajo, sal y humo.\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g",
+            "p10": "Ingredientes: Carne de cerdo, camarón, calamar, pulpo, palmito de cangrejo y vino blanco.\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g",
+            "p11": "Ingredientes: Carne de cerdo, tocino, tomillo, humo, cebolla de rama, ajo, comino y sal.\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g",
+            "p12": "Ingredientes: Combinación de carnes de cerdo selectas con toque ahumado y hierbas frescas.\n\nConsérvese de 0° a 4° C\n6 Unidades\nPeso: 500g"
+        };
+
+        function openIngredientsModal(id) {
+            const product = PRODUCTS.find(p => p.id === id);
+            if (!product) return;
+            
+            document.getElementById('modal-img').src = product.image;
+            document.getElementById('modal-img').style.display = 'block';
+            document.getElementById('modal-product-name').innerText = product.name;
+            document.getElementById('modal-price').innerText = `$ ${product.price.toLocaleString('es-CO')}`;
+            document.getElementById('modal-desc').innerHTML = INGREDIENTS_DATA[id] || product.name;
+            
+            document.getElementById('modal-add-btn').onclick = () => { addToCart(product.id); closeIngredientsModal(); };
+            
+            const modal = document.getElementById('ingredients-modal');
+            const box = document.getElementById('ingredients-box');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // For animation
+            requestAnimationFrame(() => {
+                box.classList.remove('scale-95');
+                box.classList.add('scale-100');
+            });
+        }
+
+        function closeIngredientsModal() {
+            const modal = document.getElementById('ingredients-modal');
+            const box = document.getElementById('ingredients-box');
+            box.classList.remove('scale-100');
+            box.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
 
         let cart = [];
 
